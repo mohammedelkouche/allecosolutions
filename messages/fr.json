@@ -1,0 +1,22 @@
+{
+  "languageSwitcher": { "label": "Choisir la langue", "fr": "Français (FR)", "es": "Español (ES)" },
+  "navigation": {
+    "label": "Navigation principale",
+    "À propos": "À propos",
+    "NOS Services": "Nos services",
+    "Efficacité énergétique": "Efficacité énergétique",
+    "Audit énergétique": "Audit énergétique",
+    "Énergies renouvelables": "Énergies renouvelables",
+    "CVC": "CVC",
+    "Fluides & plomberie": "Fluides & plomberie",
+    "Isolation": "Isolation",
+    "À l'international": "À l'international",
+    "Rénovation énergétique": "Rénovation énergétique",
+    "Espagne": "Espagne",
+    "France": "France",
+    "Formations": "Formations",
+    "Extension au Maroc": "Extension au Maroc",
+    "Contactez-nous": "Contactez-nous"
+  },
+  "home": { "title": "Bienvenue chez Alleco Solutions" }
+}

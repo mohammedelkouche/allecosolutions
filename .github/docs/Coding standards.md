@@ -33,20 +33,23 @@ function ServiceCard(props: any) { ... }
 
 ## Formulaires
 
-- `react-hook-form` + `zod` pour tout formulaire (contact, éventuel devis)
+Embed en iframe dans une section Contact de ta page — garde le visiteur sur ton site, meilleure UX et cohérence visuelle, Google Forms supporte l'iframe nativement (<iframe src="https://docs.google.com/forms/d/e/.../viewform?embedded=true">).
+Des instructions claires pour l'intégration de Google Forms (par exemple : intégrer le lien via un bouton d'appel à l'action "CTA" propre, ou utiliser une balise <iframe> pour l'intégrer directement dans la page de contact, tout en gardant une excellente accessibilité).
+
+<!-- - `react-hook-form` + `zod` pour tout formulaire (contact, éventuel devis)
 - Schéma zod centralisé dans `lib/schema.ts`, réutilisé côté client (validation immédiate)
-  et côté serveur (Server Action — ne jamais faire confiance uniquement au client)
+  et côté serveur (Server Action — ne jamais faire confiance uniquement au client) -->
 
 ```ts
 // lib/schema.ts
-export const contactFormSchema = z.object({
-  name: z.string().min(2, "Nom trop court"),
-  email: z.string().email("Email invalide"),
-  phone: z.string().optional(),
-  sector: z.enum(["residentiel", "collectif", "tertiaire"]),
-  message: z.string().min(10, "Message trop court"),
-});
-export type ContactFormValues = z.infer<typeof contactFormSchema>;
+// export const contactFormSchema = z.object({
+//   name: z.string().min(2, "Nom trop court"),
+//   email: z.string().email("Email invalide"),
+//   phone: z.string().optional(),
+//   sector: z.enum(["residentiel", "collectif", "tertiaire"]),
+//   message: z.string().min(10, "Message trop court"),
+// });
+// export type ContactFormValues = z.infer<typeof contactFormSchema>;
 ```
 
 ## Gestion des erreurs

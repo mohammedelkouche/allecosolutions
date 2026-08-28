@@ -1,0 +1,22 @@
+{
+  "languageSwitcher": { "label": "Elegir idioma", "fr": "Francés (FR)", "es": "Español (ES)" },
+  "navigation": {
+    "label": "Navegación principal",
+    "À propos": "Sobre nosotros",
+    "NOS Services": "Nuestros servicios",
+    "Efficacité énergétique": "Eficiencia energética",
+    "Audit énergétique": "Auditoría energética",
+    "Énergies renouvelables": "Energías renovables",
+    "CVC": "HVAC",
+    "Fluides & plomberie": "Fluidos y fontanería",
+    "Isolation": "Aislamiento",
+    "À l'international": "Internacional",
+    "Rénovation énergétique": "Rehabilitación energética",
+    "Espagne": "España",
+    "France": "Francia",
+    "Formations": "Formación",
+    "Extension au Maroc": "Expansión en Marruecos",
+    "Contactez-nous": "Contáctenos"
+  },
+  "home": { "title": "Bienvenido a Alleco Solutions" }
+}
