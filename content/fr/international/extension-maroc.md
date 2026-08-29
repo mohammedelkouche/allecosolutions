@@ -1,0 +1,7 @@
+---
+title: "Extension au Maroc"
+metaTitle: "Extension au Maroc | Alleco Solutions"
+metaDescription: "// TODO: meta description à valider avec le client"
+---
+
+// TODO: contenu à valider avec le client

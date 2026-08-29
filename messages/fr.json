@@ -2,10 +2,25 @@
   "languageSwitcher": { "label": "Choisir la langue", "fr": "Français (FR)", "es": "Español (ES)" },
   "navigation": {
     "label": "Navigation principale",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "about": "À propos",
+    "services": "NOS Services",
+    "international": "À l'international",
+    "energyEfficiency": "Efficacité énergétique",
+    "renewableEnergy": "Énergies renouvelables",
+    "hvac": "CVC",
+    "plumbing": "Fluides & plomberie",
+    "insulation": "Isolation",
+    "energyRenovation": "Rénovation énergétique",
+    "spain": "Espagne",
+    "france": "France",
+    "training": "Formations",
+    "moroccoExtension": "Extension au Maroc",
+    "contact": "Contactez-nous",
     "À propos": "À propos",
     "NOS Services": "Nos services",
     "Efficacité énergétique": "Efficacité énergétique",
-    "Audit énergétique": "Audit énergétique",
     "Énergies renouvelables": "Énergies renouvelables",
     "CVC": "CVC",
     "Fluides & plomberie": "Fluides & plomberie",
@@ -18,5 +33,30 @@
     "Extension au Maroc": "Extension au Maroc",
     "Contactez-nous": "Contactez-nous"
   },
-  "home": { "title": "Bienvenue chez Alleco Solutions" }
+  "home": {
+    "title": "Bienvenue chez Alleco Solutions",
+    "metaTitle": "Alleco Solutions | Efficacité énergétique",
+    "metaDescription": "// TODO: meta description à valider avec le client"
+  },
+  "pages": {
+    "services": {
+      "title": "Nos services | Alleco Solutions",
+      "metaDescription": "// TODO: meta description à valider avec le client",
+      "intro": "// TODO: introduction à valider avec le client",
+      "readMore": "En savoir plus"
+    },
+    "service": { "eyebrow": "Service" },
+    "international": {
+      "title": "À l'international | Alleco Solutions",
+      "metaDescription": "// TODO: meta description à valider avec le client",
+      "intro": "// TODO: introduction à valider avec le client",
+      "eyebrow": "À l'international"
+    },
+    "renovation": {
+      "title": "Rénovation énergétique | Alleco Solutions",
+      "metaDescription": "// TODO: meta description à valider avec le client",
+      "intro": "// TODO: introduction à valider avec le client",
+      "eyebrow": "Rénovation énergétique"
+    }
+  }
 }

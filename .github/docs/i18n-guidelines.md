@@ -79,9 +79,9 @@ export function ContactForm() {
 
 - Le contenu métier long (descriptions de services, secteurs) vit dans `content/fr/` et `content/es/`
 - **Même nom de fichier des deux côtés** pour garder le lien explicite entre les deux versions
-  (ex: `content/fr/services/audit-energetique.md` ↔ `content/es/services/auditoria-energetica.md`
+  (ex: `content/fr/services/efficacite-energetique.md` ↔ `content/es/services/efficacite-energetique.md`
   — le nom de fichier peut différer si le slug SEO diffère, mais il faut un mapping explicite
-  dans le frontmatter, ex: `slugFr: audit-energetique` / `slugEs: auditoria-energetica`)
+  dans le frontmatter, ex: `slugFr: efficacite-energetique` / `slugEs: eficiencia-energetica`)
 - Ne jamais faire de traduction automatique brute pour du contenu qui sera publié — un texte
   traduit littéralement du français sonne rarement naturel en espagnol commercial. Prévoir
   une relecture humaine (le client ou un traducteur) avant mise en ligne, même si Copilot peut

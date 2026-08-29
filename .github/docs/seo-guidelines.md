@@ -18,10 +18,10 @@ export async function generateMetadata({ params }: { params: { locale: string } 
     title: t("metaTitle"),
     description: t("metaDescription"),
     alternates: {
-      canonical: `https://domaine.com/${params.locale}/services/audit-energetique`,
+      canonical: `https://domaine.com/${params.locale}/services/efficacite-energetique`,
       languages: {
-        fr: "https://domaine.com/fr/services/audit-energetique",
-        es: "https://domaine.com/es/services/audit-energetique",
+        fr: "https://domaine.com/fr/services/efficacite-energetique",
+        es: "https://domaine.com/es/services/efficacite-energetique",
       },
     },
     openGraph: {
@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
       description: t("metaDescription"),
       locale: params.locale,
       type: "website",
-      images: ["/og/services-audit-energetique.jpg"],
+      images: ["/og/services-efficacite-energetique.jpg"],
     },
   };
 }
@@ -73,7 +73,7 @@ Exemple minimal pour Organization :
 ## URLs et routing
 
 - URLs propres, en minuscules, sans accents, mots séparés par des tirets :
-  `/fr/services/audit-energetique`, `/es/servicios/auditoria-energetica`
+  `/fr/services/efficacite-energetique`, `/es/services/efficacite-energetique`
 - Prévoir des slugs différents par langue quand c'est plus naturel pour le SEO local
   (`/es/servicios/...` plutôt que de forcer les mêmes slugs FR sur la version ES)
 - Toujours un lien canonique explicite, jamais de contenu dupliqué accessible à deux URLs différentes
@@ -97,8 +97,8 @@ Le Core Web Vitals fait partie du ranking Google. Règles strictes :
 
 - Format WebP/AVIF (généré automatiquement par `next/image`)
 - `alt` descriptif et naturel, incluant le contexte métier quand pertinent
-  (ex: `alt="Technicien réalisant un audit énergétique dans un immeuble collectif"`,
-  pas `alt="audit énergétique immeuble collectif pas cher devis gratuit"`)
+  (ex: `alt="Technicien analysant la performance énergétique d'un immeuble collectif"`,
+  pas `alt="performance énergétique immeuble collectif pas cher devis gratuit"`)
 
 ## Contenu et mots-clés
 

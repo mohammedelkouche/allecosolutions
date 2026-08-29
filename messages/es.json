@@ -2,10 +2,25 @@
   "languageSwitcher": { "label": "Elegir idioma", "fr": "Francés (FR)", "es": "Español (ES)" },
   "navigation": {
     "label": "Navegación principal",
+    "openMenu": "Abrir el menú",
+    "closeMenu": "Cerrar el menú",
+    "about": "Sobre nosotros",
+    "services": "Nuestros servicios",
+    "international": "Internacional",
+    "energyEfficiency": "Eficiencia energética",
+    "renewableEnergy": "Energías renovables",
+    "hvac": "HVAC",
+    "plumbing": "Fluidos y fontanería",
+    "insulation": "Aislamiento",
+    "energyRenovation": "Rehabilitación energética",
+    "spain": "España",
+    "france": "Francia",
+    "training": "Formación",
+    "moroccoExtension": "Expansión en Marruecos",
+    "contact": "Contáctenos",
     "À propos": "Sobre nosotros",
     "NOS Services": "Nuestros servicios",
     "Efficacité énergétique": "Eficiencia energética",
-    "Audit énergétique": "Auditoría energética",
     "Énergies renouvelables": "Energías renovables",
     "CVC": "HVAC",
     "Fluides & plomberie": "Fluidos y fontanería",
@@ -18,5 +33,30 @@
     "Extension au Maroc": "Expansión en Marruecos",
     "Contactez-nous": "Contáctenos"
   },
-  "home": { "title": "Bienvenido a Alleco Solutions" }
+  "home": {
+    "title": "Bienvenido a Alleco Solutions",
+    "metaTitle": "Alleco Solutions | Eficiencia energética",
+    "metaDescription": "// TODO: meta description por validar con el cliente"
+  },
+  "pages": {
+    "services": {
+      "title": "Nuestros servicios | Alleco Solutions",
+      "metaDescription": "// TODO: meta description por validar con el cliente",
+      "intro": "// TODO: introducción a validar con el cliente",
+      "readMore": "Saber más"
+    },
+    "service": { "eyebrow": "Servicio" },
+    "international": {
+      "title": "Internacional | Alleco Solutions",
+      "metaDescription": "// TODO: meta description por validar con el cliente",
+      "intro": "// TODO: introducción a validar con el cliente",
+      "eyebrow": "Internacional"
+    },
+    "renovation": {
+      "title": "Rehabilitación energética | Alleco Solutions",
+      "metaDescription": "// TODO: meta description por validar con el cliente",
+      "intro": "// TODO: introducción a validar con el cliente",
+      "eyebrow": "Rehabilitación energética"
+    }
+  }
 }
