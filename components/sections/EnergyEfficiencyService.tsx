@@ -55,32 +55,38 @@ export function EnergyEfficiencyService({ service }: EnergyEfficiencyServiceProp
           <path d="M1050 70L1210 230L1050 390L890 230L1050 70ZM1210 230L1370 390L1210 550L1050 390L1210 230Z" stroke="#D6A84F" strokeWidth="1.2" />
           <path d="M250 230L410 390L250 550L90 390L250 230ZM410 390L570 550L410 710L250 550L410 390Z" stroke="#C58B32" strokeWidth="1" opacity="0.75" />
           <circle cx="560" cy="260" r="5" stroke="#F0C978" strokeWidth="1" />
+          <circle cx="560" cy="260" r="5" stroke="#F0C978" strokeWidth="1" />
           <circle cx="910" cy="360" r="5" stroke="#F0C978" strokeWidth="1" />
           <circle cx="1050" cy="230" r="5" fill="#D6A84F" />
           <circle cx="250" cy="390" r="5" fill="#D6A84F" />
         </svg>
-        <div className="relative mx-auto grid w-full max-w-6xl gap-12 px-4 py-16 sm:px-6 md:py-24 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:px-8">
+        <div className="relative mx-auto grid w-full max-w-6xl gap-12 px-4 py-16 sm:px-6 md:py-24 lg:grid-cols-[0.7fr_1.3fr] lg:items-center lg:px-8">
           <div className="max-w-xl">
             <h1 className="mt-4 text-4xl font-semibold tracking-normal text-white md:text-5xl">{service.title}</h1>
           </div>
           {service.heroImage && (
-            <div className="relative mx-auto aspect-16/9 w-full max-w-2xl overflow-hidden rounded-2xl border border-amber-200/60 bg-white/5 p-3 shadow-sm sm:p-5">
-              <Image
-                src={service.heroImage}
-                alt={service.title}
-                fill
-                priority
-                sizes="(min-width: 1024px) 640px, 100vw"
-                className="object-contain"
-              />
+            <div className="mx-auto inline-block w-full max-w-90 rounded-2xl border border-amber-200/60 bg-white/5 p-1 shadow-sm sm:p-1 lg:justify-self-end">
+              <div className="relative overflow-hidden rounded-xl">
+                <Image
+                  src={service.heroImage}
+                  alt={service.title}
+                  width={360}
+                  height={440}
+                  priority
+                  className="block h-auto w-full rounded-xl object-cover"
+                />
+              </div>
             </div>
           )}
         </div>
       </section>
 
       <section className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 md:py-24 lg:px-8">
-        <div className="relative space-y-16 before:absolute before:bottom-0 before:left-2 before:top-0 before:w-px before:bg-amber-200 lg:space-y-24 lg:before:left-1/2">
-          {sections.map((section, index) => <ServiceSection key={section.title} section={section} index={index} />)}
+        <div className="relative overflow-hidden rounded-[28px] border border-amber-200/50 bg-linear-to-b from-white to-amber-50/30 p-4 shadow-[0_0_0_1px_rgba(251,191,36,0.08),0_18px_45px_rgba(15,23,42,0.04)] sm:p-6 lg:p-8">
+          <div className="absolute inset-y-6 left-5 w-px bg-amber-200/80 lg:left-1/2" aria-hidden="true" />
+          <div className="relative space-y-12 lg:space-y-16">
+            {sections.map((section, index) => <ServiceSection key={section.title} section={section} index={index} />)}
+          </div>
         </div>
       </section>
     </main>

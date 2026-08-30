@@ -38,6 +38,42 @@
     "metaTitle": "Alleco Solutions | Efficacité énergétique",
     "metaDescription": "// TODO: meta description à valider avec le client"
   },
+  "about": {
+    "eyebrow": "À propos",
+    "title": "Qui sommes-nous ?",
+    "body": "// TODO: paragraphe à valider avec le client",
+    "metaTitle": "À propos | Alleco Solutions",
+    "metaDescription": "// TODO: meta description à valider avec le client",
+    "hero": {
+      "eyebrow": "À propos",
+      "slogan": "L'ingénierie énergétique au service de bâtiments plus performants."
+    },
+    "intro": {
+      "companyName": "ALLECO SOLUTIONS",
+      "mission": "L'ingénierie énergétique au service de bâtiments plus performants.",
+      "description": "Nous accompagnons les professionnels et porteurs de projets dans la conception, l'étude et l'optimisation de leurs projets énergétiques et techniques, en France, en Espagne et au Maroc.",
+      "expertise": "Notre équipe d'ingénieurs expérimentés intervient dans les domaines de la rénovation énergétique, de l'efficacité énergétique, des énergies renouvelables et des études techniques du bâtiment : chauffage, climatisation, ventilation, fluides, plomberie et isolation.",
+      "approach": "Grâce à une expertise technique reconnue, une maîtrise des outils métiers et une connaissance approfondie des normes et réglementations, nous proposons des solutions fiables, adaptées et directement opérationnelles, de l'étude jusqu'au suivi de réalisation.",
+      "objective": "Notre objectif : transformer les enjeux énergétiques de vos projets en solutions concrètes, performantes et durables."
+    }
+  },
+  "footer": {
+    "companyName": "Alleco Solutions",
+    "companyDescription": "Audit énergétique, rénovation et conseil pour améliorer la performance et la durabilité de vos bâtiments.",
+    "servicesTitle": "Nos services",
+    "internationalTitle": "À l'international",
+    "contactTitle": "Contactez-nous",
+    "rightsReserved": "Tous droits réservés."
+  },
+  "international": {
+    "globe": {
+      "title": "Une présence internationale",
+      "subtitle": "Nous accompagnons nos partenaires en France, en Espagne et au Maroc.",
+      "france": "France",
+      "spain": "Espagne",
+      "morocco": "Maroc"
+    }
+  },
   "pages": {
     "services": {
       "title": "Nos services | Alleco Solutions",
