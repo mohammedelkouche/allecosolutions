@@ -13,14 +13,14 @@ interface RetroGridProps {
 
 export function RetroGrid({
   className = "",
-  angle = 65,
+  angle = 0,
   cellSize = 60,
   opacity = 0.5,
-  lightLineColor = "rgb(200, 200, 200)",
-  darkLineColor = "rgb(50, 50, 50)",
+  lightLineColor = "rgb(194, 139, 43)",
+  darkLineColor = "rgb(139, 90, 43)",
 }: RetroGridProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number | undefined>(undefined);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -52,22 +52,32 @@ export function RetroGrid({
       ctx.clearRect(0, 0, width, height);
       ctx.save();
 
-      // Apply rotation
-      ctx.translate(width / 2, height / 2);
-      ctx.rotate((angle * Math.PI) / 180);
-      ctx.translate(-width / 2, -height / 2);
+      // No rotation - keep grid flat horizontally
+      // Only apply minimal perspective transform for depth effect
+      const horizonY = height * 0.4; // Horizon line position
+      const vanishingPointX = width / 2;
+      const vanishingPointY = horizonY;
 
-      const colors = [lightLineColor, darkLineColor];
+      // Draw horizontal lines with progressive spacing (perspective effect)
+      const numHorizontalLines = 25;
+      for (let i = 0; i < numHorizontalLines; i++) {
+        // Progressive spacing - lines get closer together near horizon
+        const progress = i / numHorizontalLines;
+        const spacing = cellSize * (0.5 + progress * 1.5); // Lines spread out as they get closer
+        const y = horizonY + offset + (i * spacing);
+        
+        if (y > height) continue;
 
-      // Draw horizontal lines
-      for (let y = offset; y < height + cellSize; y += cellSize) {
+        // Fade lines near the edges and horizon
+        const distanceFromHorizon = (y - horizonY) / (height - horizonY);
+        const fadeAlpha = opacity * Math.min(1, distanceFromHorizon * 1.5);
+
         const gradient = ctx.createLinearGradient(0, y, width, y);
-        gradient.addColorStop(0, colors[0]);
-        gradient.addColorStop(0.5, colors[1]);
-        gradient.addColorStop(1, colors[0]);
+        gradient.addColorStop(0, `rgba(194, 139, 43, ${fadeAlpha * 0.2})`);
+        gradient.addColorStop(0.5, `rgba(194, 139, 43, ${fadeAlpha})`);
+        gradient.addColorStop(1, `rgba(194, 139, 43, ${fadeAlpha * 0.2})`);
 
         ctx.strokeStyle = gradient;
-        ctx.globalAlpha = opacity;
         ctx.lineWidth = 0.5;
         ctx.beginPath();
         ctx.moveTo(0, y);
@@ -75,27 +85,52 @@ export function RetroGrid({
         ctx.stroke();
       }
 
-      // Draw vertical lines
-      for (let x = 0; x < width; x += cellSize) {
-        const gradient = ctx.createLinearGradient(x, 0, x, height);
-        gradient.addColorStop(0, colors[0]);
-        gradient.addColorStop(0.5, colors[1]);
-        gradient.addColorStop(1, colors[0]);
+      // Draw vertical lines converging to vanishing point (horizontal perspective)
+      const numVerticalLines = 40;
+      for (let i = 0; i < numVerticalLines; i++) {
+        const x = (i / (numVerticalLines - 1)) * width;
+        
+        // Calculate line from bottom to vanishing point for proper horizontal perspective
+        const bottomX = x;
+        const bottomY = height;
+        const topX = vanishingPointX + (x - vanishingPointX) * 0.15; // Converge toward center
+        const topY = horizonY;
+
+        // Fade vertical lines near edges
+        const distanceFromCenter = Math.abs(x - width / 2) / (width / 2);
+        const fadeAlpha = opacity * (1 - distanceFromCenter * 0.6);
+
+        const gradient = ctx.createLinearGradient(x, horizonY, x, height);
+        gradient.addColorStop(0, `rgba(139, 90, 43, ${fadeAlpha * 0.1})`);
+        gradient.addColorStop(0.5, `rgba(139, 90, 43, ${fadeAlpha})`);
+        gradient.addColorStop(1, `rgba(139, 90, 43, ${fadeAlpha * 0.1})`);
 
         ctx.strokeStyle = gradient;
-        ctx.globalAlpha = opacity;
-        ctx.lineWidth = 0.5;
+        ctx.lineWidth = 0.3;
         ctx.beginPath();
-        ctx.moveTo(x, 0);
-        ctx.lineTo(x, height);
+        ctx.moveTo(topX, topY);
+        ctx.lineTo(bottomX, bottomY);
         ctx.stroke();
       }
 
+      // Add gradient fade at top and bottom edges
+      const topFade = ctx.createLinearGradient(0, 0, 0, horizonY);
+      topFade.addColorStop(0, "rgba(255, 255, 255, 0.8)");
+      topFade.addColorStop(1, "rgba(255, 255, 255, 0)");
+      ctx.fillStyle = topFade;
+      ctx.fillRect(0, 0, width, horizonY);
+
+      const bottomFade = ctx.createLinearGradient(0, height - 100, 0, height);
+      bottomFade.addColorStop(0, "rgba(255, 255, 255, 0)");
+      bottomFade.addColorStop(1, "rgba(255, 255, 255, 0.3)");
+      ctx.fillStyle = bottomFade;
+      ctx.fillRect(0, height - 100, width, 100);
+
       ctx.restore();
 
-      // Update offset for animation
+      // Update offset for animation (scrolling effect)
       if (!preferReducedMotion) {
-        offset = (offset + 1) % cellSize;
+        offset = (offset + 0.5) % (cellSize * 3);
       }
 
       animationRef.current = requestAnimationFrame(drawGrid);

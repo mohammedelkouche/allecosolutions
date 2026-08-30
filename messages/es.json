@@ -18,7 +18,6 @@
     "training": "Formación",
     "moroccoExtension": "Expansión en Marruecos",
     "contact": "Contáctenos",
-    "À propos": "Sobre nosotros",
     "NOS Services": "Nuestros servicios",
     "Efficacité énergétique": "Eficiencia energética",
     "Énergies renouvelables": "Energías renovables",
@@ -33,11 +32,7 @@
     "Extension au Maroc": "Expansión en Marruecos",
     "Contactez-nous": "Contáctenos"
   },
-  "home": {
-    "title": "Bienvenido a Alleco Solutions",
-    "metaTitle": "Alleco Solutions | Eficiencia energética",
-    "metaDescription": "// TODO: meta description por validar con el cliente"
-  },
+
   "about": {
     "eyebrow": "Sobre nosotros",
     "title": "¿Quiénes somos?",
@@ -45,12 +40,12 @@
     "metaTitle": "Sobre nosotros | Alleco Solutions",
     "metaDescription": "// TODO: meta description por validar con el cliente",
     "hero": {
-      "eyebrow": "Sobre nosotros",
-      "slogan": "La ingeniería energética al servicio de edificios más eficientes."
+      "eyebrow": "",
+      "slogan": "La ingeniería energética al servicio de edificios más eficientes"
     },
     "intro": {
       "companyName": "ALLECO SOLUTIONS",
-      "mission": "La ingeniería energética al servicio de edificios más eficientes.",
+      "mission": "La ingeniería energética al servicio de edificios más eficientes",
       "description": "Acompañamos a profesionales y promotores de proyectos en el diseño, estudio y optimización de sus proyectos energéticos y técnicos, en Francia, España y Marruecos.",
       "expertise": "Nuestro equipo de ingenieros experimentados actúa en los campos de la rehabilitación energética, eficiencia energética, energías renovables y estudios técnicos de edificios: calefacción, aire acondicionado, ventilación, fluidos, fontanería y aislamiento.",
       "approach": "Gracias a una experiencia técnica reconocida, dominio de herramientas profesionales y conocimiento profundo de normas y regulaciones, ofrecemos soluciones confiables, adaptadas y directamente operacionales, desde el estudio hasta el seguimiento de la realización.",

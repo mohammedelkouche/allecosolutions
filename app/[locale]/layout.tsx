@@ -26,6 +26,10 @@ interface LocaleLayoutProps {
 export const metadata: Metadata = {
   title: "Alleco Solutions",
   description: "Solutions d'efficacité énergétique.",
+  icons: {
+    icon: "/Logoalleco.png",
+    apple: "/Logoalleco.png",
+  },
 };
 
 export function generateStaticParams() {

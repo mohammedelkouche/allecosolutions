@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { AboutHero } from "@/components/sections/AboutHero";
 import { AboutSection } from "@/components/sections/AboutSection";
-import InternationalGlobeSection from "@/components/sections/InternationalGlobeSection";
+import { AllecosAboutIntro } from "@/components/sections/AllecosAboutIntro";
 import { createLocalizedMetadata } from "@/lib/seo";
 
 interface HomePageProps {
@@ -10,27 +11,25 @@ interface HomePageProps {
 
 export async function generateMetadata({ params }: HomePageProps): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "home" });
+  const t = await getTranslations({ locale, namespace: "about" });
   return createLocalizedMetadata(locale, "/", t("metaTitle"), t("metaDescription"));
 }
 
 export default async function Home({ params }: HomePageProps) {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "home" });
-  const aboutT = await getTranslations({ locale, namespace: "about" });
+  const t = await getTranslations({ locale, namespace: "about" });
 
   return (
-    <div className="flex min-h-screen flex-col bg-slate-100">
-      <main id="accueil" className="w-full">
-        <section className="flex items-center justify-center px-6 py-24">
-          <h1 className="text-center text-4xl font-semibold text-slate-950 md:text-6xl">
-            {t("title")}
-          </h1>
-        </section>
-
-        <InternationalGlobeSection />
-        <AboutSection eyebrow={aboutT("eyebrow")} title={aboutT("title")} body={aboutT("body")} />
-      </main>
-    </div>
+    <main className="w-full bg-slate-100">
+      <AboutHero />
+      
+      {/* ALLECO SOLUTIONS with Globe */}
+      <AllecosAboutIntro />
+      
+      {/* Additional About Section */}
+      <div className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+        <AboutSection eyebrow={t("eyebrow")} title={t("title")} body={t("body")} />
+      </div>
+    </main>
   );
 }

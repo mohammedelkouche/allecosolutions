@@ -13,39 +13,39 @@ export async function AllecosAboutIntro() {
 
   return (
     <section className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
-      <div className="grid gap-12 md:grid-cols-2">
-        {/* Left: Text Content */}
-        <div className="flex flex-col justify-center">
-          <h2 className="mb-6 text-4xl font-bold text-slate-950">
-            {t("companyName")}
-          </h2>
-          
-          <div className="space-y-6 text-lg text-slate-700">
-            <p className="leading-relaxed">
+      {/* Unique conteneur parent avec bordure arrondie */}
+      <div className="border border-border rounded-2xl bg-secondary p-8 md:p-12">
+        {/* Grille à deux colonnes en desktop, une colonne en mobile */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          {/* Colonne gauche : titre et paragraphe de présentation */}
+          <div className="order-1">
+            <h2 className="mb-6 text-3xl font-bold text-foreground md:text-4xl">
               {t("mission")}
-            </p>
+            </h2>
             
-            <p className="leading-relaxed">
-              {t("description")}
-            </p>
-            
-            <p className="leading-relaxed">
-              {t("expertise")}
-            </p>
-            
-            <p className="leading-relaxed">
-              {t("approach")}
-            </p>
-            
-            <p className="font-semibold text-amber-700">
-              {t("objective")}
-            </p>
+            <div className="space-y-4 text-lg text-muted-foreground">
+              <p className="leading-relaxed">
+                {t("description")}
+              </p>
+              
+              <p className="leading-relaxed">
+                {t("expertise")}
+              </p>
+              
+              <p className="leading-relaxed">
+                {t("approach")}
+              </p>
+              
+              <p className="leading-relaxed font-semibold text-foreground">
+                {t("objective")}
+              </p>
+            </div>
           </div>
-        </div>
 
-        {/* Right: Globe */}
-        <div className="flex items-center justify-center">
-          <StaticGlobe markers={markers} className="mx-auto max-w-sm" />
+          {/* Colonne droite : StaticGlobe centré verticalement */}
+          <div className="flex items-center justify-center order-2">
+            <StaticGlobe markers={markers} className="mx-auto max-w-xs md:max-w-sm" />
+          </div>
         </div>
       </div>
     </section>
