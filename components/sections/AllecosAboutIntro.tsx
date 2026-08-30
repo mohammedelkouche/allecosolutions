@@ -1,32 +1,14 @@
 import { getTranslations } from "next-intl/server";
-import { GlobePolaroids, type PolaroidMarker } from "@/components/sections/GlobePolaroids";
+import { StaticGlobe, type CountryMarker } from "@/components/sections/StaticGlobe";
 
 export async function AllecosAboutIntro() {
   const t = await getTranslations("about.intro");
   const globeT = await getTranslations("international.globe");
 
-  const markers: PolaroidMarker[] = [
-    {
-      id: "polaroid-france",
-      location: [46.6034, 1.8883],
-      image: "/locations/french.jpg",
-      caption: globeT("france"),
-      rotate: 2,
-    },
-    {
-      id: "polaroid-spain",
-      location: [40.4637, -3.7492],
-      image: "/locations/spain.jpg",
-      caption: globeT("spain"),
-      rotate: -4,
-    },
-    {
-      id: "polaroid-morocco",
-      location: [31.7917, -7.0926],
-      image: "/locations/morocco.jpg",
-      caption: globeT("morocco"),
-      rotate: 5,
-    },
+  const markers: CountryMarker[] = [
+    { id: "france", anchor: { x: 46, y: 40 }, position: { x: 49, y: 11 }, rotate: 1, image: "/locations/french.jpg", caption: globeT("france") },
+    { id: "spain", anchor: { x: 39, y: 48 }, position: { x: 15, y: 34 }, rotate: -5, image: "/locations/spain.jpg", caption: globeT("spain") },
+    { id: "morocco", anchor: { x: 39, y: 56 }, position: { x: 85, y: 62 }, rotate: 4, image: "/locations/morocco.jpg", caption: globeT("morocco") },
   ];
 
   return (
@@ -61,9 +43,9 @@ export async function AllecosAboutIntro() {
           </div>
         </div>
 
-        {/* Right: Globe Polaroids */}
+        {/* Right: Globe */}
         <div className="flex items-center justify-center">
-          <GlobePolaroids markers={markers} className="mx-auto max-w-sm" />
+          <StaticGlobe markers={markers} className="mx-auto max-w-sm" />
         </div>
       </div>
     </section>

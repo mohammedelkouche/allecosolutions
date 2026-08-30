@@ -5,7 +5,7 @@ import { getTranslations } from "next-intl/server";
 import { navigation } from "@/lib/navigation";
 
 const contactInfo = [
-  { icon: Mail, text: "contact@allecosolutions.com" },
+  { icon: Mail, text: "contact@allecosolutions.com", href: "mailto:contact@allecosolutions.com" },
   { icon: Phone, text: "+212 000 000 000" },
   { icon: MapPin, text: "Adresse à préciser", isAddress: true },
 ];
@@ -65,11 +65,18 @@ export default async function Footer() {
           <div>
             <p className="text-sm font-medium text-foreground">{tFooter("contactTitle")}</p>
             <ul className="mt-4 space-y-3 text-sm">
-              {contactInfo.map(({ icon: Icon, text, isAddress }) => (
+              {contactInfo.map(({ icon: Icon, text, isAddress, href }) => (
                 <li key={text} className="flex items-start gap-2">
                   <Icon className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden="true" />
                   {isAddress ? (
                     <address className="not-italic text-muted-foreground">{text}</address>
+                  ) : href ? (
+                    <a
+                      href={href}
+                      className="inline-block text-muted-foreground transition-transform duration-200 hover:scale-110 hover:text-foreground"
+                    >
+                      {text}
+                    </a>
                   ) : (
                     <span className="text-muted-foreground">{text}</span>
                   )}
