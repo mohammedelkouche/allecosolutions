@@ -2,7 +2,7 @@ import Image from "next/image";
 import type { ContentDocument, ContentSection } from "@/lib/content";
 import { MarkdownDocument } from "@/components/content/MarkdownDocument";
 
-interface EnergyEfficiencyServiceProps {
+interface ServiceTimelinePageProps {
   service: ContentDocument;
 }
 
@@ -41,7 +41,7 @@ function ServiceSection({ section, index }: ServiceSectionProps) {
   );
 }
 
-export function EnergyEfficiencyService({ service }: EnergyEfficiencyServiceProps) {
+export function ServiceTimelinePage({ service }: ServiceTimelinePageProps) {
   const sections = service.sections ?? [];
 
   return (
@@ -82,7 +82,7 @@ export function EnergyEfficiencyService({ service }: EnergyEfficiencyServiceProp
       </section>
 
       <section className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 md:py-24 lg:px-8">
-        <div className="relative overflow-hidden rounded-[28px] border border-amber-200/50 bg-linear-to-b from-white to-amber-50/30 p-4 shadow-[0_0_0_1px_rgba(251,191,36,0.08),0_18px_45px_rgba(15,23,42,0.04)] sm:p-6 lg:p-8">
+        <div className="relative overflow-hidden rounded-[28px] border border-amber-200/50 bg-gradient-to-b from-white to-amber-50/30 p-4 shadow-[0_0_0_1px_rgba(251,191,36,0.08),0_18px_45px_rgba(15,23,42,0.04)] sm:p-6 lg:p-8">
           <div className="absolute inset-y-6 left-5 w-px bg-amber-200/80 lg:left-1/2" aria-hidden="true" />
           <div className="relative space-y-12 lg:space-y-16">
             {sections.map((section, index) => <ServiceSection key={section.title} section={section} index={index} />)}

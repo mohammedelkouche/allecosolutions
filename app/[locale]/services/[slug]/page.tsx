@@ -3,7 +3,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { MarkdownDocument } from "@/components/content/MarkdownDocument";
-import { EnergyEfficiencyService } from "@/components/sections/EnergyEfficiencyService";
+import { ServiceTimelinePage } from "@/components/sections/ServiceTimelinePage";
 import { getService } from "@/lib/content";
 import { serviceSlugs } from "@/lib/navigation";
 import { createLocalizedMetadata } from "@/lib/seo";
@@ -31,8 +31,8 @@ export default async function ServicePage({ params }: ServicePageProps) {
   const service = getService(locale, slug);
   const t = await getTranslations({ locale, namespace: "pages.service" });
 
-  if (slug === "efficacite-energetique") {
-    return <EnergyEfficiencyService service={service} />;
+  if (slug === "efficacite-energetique" || slug === "energies-renouvelables") {
+    return <ServiceTimelinePage service={service} />;
   }
 
   return (
