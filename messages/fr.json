@@ -18,6 +18,9 @@
     "training": "Formations",
     "moroccoExtension": "Implantation & Développement au Maroc",
     "contact": "Contactez-nous",
+    "requestQuote": "Demandez un devis",
+    "growMoroccoLine1": "Développez votre",
+    "growMoroccoLine2": "activité au Maroc",
     "Nos Services": "Nos Services",
     "Efficacité énergétique": "Efficacité énergétique",
     "Énergies renouvelables": "Énergies renouvelables",
@@ -41,7 +44,9 @@
     "metaDescription": "// TODO: meta description à valider avec le client",
     "hero": {
       "eyebrow": "",
-      "slogan": "Votre partenaire technique et énergétique pour développer, optimiser et réussir vos projets, de l’ingénierie à la réalisation, en France, en Espagne et au Maroc."
+      "sloganTier1": "Votre partenaire technique et énergétique",
+      "sloganTier2": "pour développer, optimiser et réussir vos projets,",
+      "sloganTier3": "de l’ingénierie à la réalisation, en France, en Espagne et au Maroc."
     },
     "intro": {
       "companyName": "ALLECO SOLUTIONS",
@@ -68,6 +73,12 @@
       "spain": "Espagne",
       "morocco": "Maroc"
     }
+  },
+  "partners": {
+    "eyebrow": "Nos partenaires",
+    "title": "Ils nous font confiance",
+    "subtitle": "Des organismes reconnus qui certifient et valident la qualité de nos accompagnements énergétiques.",
+    "logoAlt": "Logo partenaire {name}"
   },
   "pages": {
     "services": {

@@ -96,6 +96,7 @@ export function GlobePolaroids({
 
     let globe: ReturnType<typeof createGlobe> | undefined;
     let width = 0;
+    let animationFrameId = 0;
 
     const updateMarkerOverlay = () => {
       for (const marker of markers) {
@@ -138,24 +139,26 @@ export function GlobePolaroids({
         markerColor: [0.29, 0.65, 0.15],
         glowColor: [0.35, 0.7, 0.28],
         markers: markers.map((marker) => ({ location: marker.location, size: 0.06 })),
-        onRender: (state) => {
-          if (!reducedMotionRef.current) {
-            phiRef.current += speed;
-          }
-          state.phi = phiRef.current;
-          state.width = width * 2;
-          state.height = width * 2;
-          updateMarkerOverlay();
-        },
       });
+    };
+
+    const renderFrame = () => {
+      if (!reducedMotionRef.current) {
+        phiRef.current += speed;
+      }
+      globe?.update({ phi: phiRef.current, width: width * 2, height: width * 2 });
+      updateMarkerOverlay();
+      animationFrameId = requestAnimationFrame(renderFrame);
     };
 
     const resizeObserver = new ResizeObserver(onResize);
     resizeObserver.observe(wrapper);
     onResize();
     updateMarkerOverlay();
+    animationFrameId = requestAnimationFrame(renderFrame);
 
     return () => {
+      cancelAnimationFrame(animationFrameId);
       resizeObserver.disconnect();
       globe?.destroy();
       canvas.remove();

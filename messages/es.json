@@ -18,6 +18,9 @@
     "training": "Formación",
     "moroccoExtension": "Implantación y Desarrollo en Marruecos",
     "contact": "Contáctenos",
+    "requestQuote": "Solicitar presupuesto",
+    "growMoroccoLine1": "Desarrolle su actividad",
+    "growMoroccoLine2": "en Marruecos",
     "Nos Services": "Nuestros servicios",
     "Efficacité énergétique": "Eficiencia energética",
     "Énergies renouvelables": "Energías renovables",
@@ -41,7 +44,9 @@
     "metaDescription": "// TODO: meta description por validar con el cliente",
     "hero": {
       "eyebrow": "",
-      "slogan": "La ingeniería energética al servicio de edificios más eficientes"
+      "sloganTier1": "Su socio técnico y energético",
+      "sloganTier2": "para desarrollar, optimizar y llevar a cabo sus proyectos,",
+      "sloganTier3": "desde la ingeniería hasta la ejecución, en Francia, España y Marruecos."
     },
     "intro": {
       "companyName": "ALLECO SOLUTIONS",
@@ -68,6 +73,12 @@
       "spain": "España",
       "morocco": "Marruecos"
     }
+  },
+  "partners": {
+    "eyebrow": "Nuestros socios",
+    "title": "Confían en nosotros",
+    "subtitle": "Organismos reconocidos que certifican y avalan la calidad de nuestros acompañamientos energéticos.",
+    "logoAlt": "Logo del socio {name}"
   },
   "pages": {
     "services": {

@@ -2,6 +2,7 @@ import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { getServices } from "@/lib/content";
 import { createLocalizedMetadata } from "@/lib/seo";
+import { FrostedCard } from "@/components/ui/FrostedCard";
 
 interface ServicesPageProps {
   params: Promise<{ locale: string }>;
@@ -24,12 +25,12 @@ export default async function ServicesPage({ params }: ServicesPageProps) {
       <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">{t("intro")}</p>
       <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {services.map((service) => (
-          <article key={service.slug} className="rounded-md border border-border bg-white p-6 shadow-sm">
-            <h2 className="text-xl font-semibold text-foreground">{service.title}</h2>
+          <FrostedCard key={service.slug} className="rounded-md">
+            <h2 className="text-xl font-bold text-white">{service.title}</h2>
             <Link href={`/services/${service.slug}`} className="mt-6 inline-flex rounded-md bg-accent px-4 py-2 text-sm font-semibold text-white hover:bg-accent/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
               {t("readMore")}
             </Link>
-          </article>
+          </FrostedCard>
         ))}
       </div>
     </main>

@@ -25,11 +25,18 @@ export async function AboutHero() {
               {t("eyebrow")}
             </p>
           )}
+          {/* 3-tier slogan hierarchy: same sentence, structurally split (no wording changes). */}
           <DiaTextReveal
-            text={t("slogan")}
-            colors={["#4BA625", "#2E7D32"]}
-            className="block text-4xl font-bold tracking-tight text-primary md:text-6xl"
+            text={t("sloganTier1")}
+            // colors={["#4BA625", "#2E7D32"]}
+            className="block text-2xl font-bold  text-primary md:text-4xl"
           />
+          <p className="mt-4 text-lg font-bold text-primary md:text-3xl">
+            {t("sloganTier2")}
+          </p>
+          <p className="mt-3 text-base font-bold text-primary md:text-2xl">
+            {t("sloganTier3")}
+          </p>
         </div>
       </div>
     </section>

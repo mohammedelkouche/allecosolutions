@@ -5,13 +5,21 @@ import { useState } from "react";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { Menu, X } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import { navigation, type NavigationItem } from "@/lib/navigation";
 
 // Client state is required for Radix keyboard/click control and desktop hover opening.
 const triggerClassName = "group relative inline-flex items-center gap-1 rounded-md px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:font-semibold hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2";
 const itemClassName = "flex items-center justify-between px-4 py-2 text-sm font-medium text-muted-foreground outline-none transition-colors data-[highlighted]:bg-secondary data-[highlighted]:font-semibold data-[highlighted]:text-foreground";
+const quoteButtonClassName = "inline-flex min-h-11 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary/90 focus-visible:outline-2 focus-visible:outline-offset-2";
+const moroccoButtonClassName = "inline-flex min-h-11 flex-col items-center justify-center rounded-md border border-primary px-4 py-2 text-center text-xs font-semibold leading-tight text-primary transition-colors hover:bg-secondary focus-visible:outline-2 focus-visible:outline-offset-2";
+const quoteFormUrl = "https://forms.gle/sqMvtxDJeSpHZXS66";
+
+// Reuse the existing nav href instead of hardcoding a new path.
+const moroccoHref = navigation
+  .find((item) => item.labelKey === "international")
+  ?.children?.find((child) => child.labelKey === "moroccoExtension")?.href ?? "/international/extension-maroc";
 
 interface DesktopMenuItemProps {
   item: NavigationItem;
@@ -110,9 +118,11 @@ function MobileMenuItem({ item, closeMenu, depth = 0 }: MobileMenuItemProps) {
 export function Header() {
   const t = useTranslations("navigation");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isOnMoroccoPage = pathname === moroccoHref;
 
   return (
-    <header className="relative border-b border-border bg-white text-foreground">
+    <header className="sticky top-0 z-50 border-b border-border bg-white text-foreground">
       <nav aria-label={t("label")} className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="relative flex h-20 items-center justify-between">
           <button type="button" aria-expanded={isMobileMenuOpen} aria-controls="main-navigation" aria-label={isMobileMenuOpen ? t("closeMenu") : t("openMenu")} className="relative inline-flex items-center justify-center rounded-md p-2 text-foreground hover:bg-secondary hover:text-foreground focus-visible:outline-2 sm:hidden" onClick={() => setIsMobileMenuOpen((open) => !open)}>
@@ -121,14 +131,40 @@ export function Header() {
           <Link href="/" className="flex shrink-0 items-center focus-visible:outline-2 focus-visible:outline-offset-4">
             <Image src="/Logoalleco.png" alt="Alleco Solutions" width={226} height={128} priority className="h-15 w-auto object-contain" />
           </Link>
-          <div id="main-navigation" className="hidden sm:block">
+          <div id="main-navigation" className="hidden items-center gap-4 sm:flex">
             <div className="flex items-center gap-1">
             {navigation.map((item) => <DesktopMenuItem key={item.href} item={item} label={t(item.labelKey)} />)}
+            </div>
+            <div className="flex items-center gap-3">
+              <a href={quoteFormUrl} target="_blank" rel="noopener noreferrer" className={quoteButtonClassName}>
+                {t("requestQuote")}
+              </a>
+              {!isOnMoroccoPage && (
+                <Link href={moroccoHref} className={moroccoButtonClassName}>
+                  <span className="block">{t("growMoroccoLine1")}</span>
+                  <span className="block">{t("growMoroccoLine2")}</span>
+                </Link>
+              )}
             </div>
           </div>
           <LanguageSwitcher />
         </div>
-        {isMobileMenuOpen && <div className="border-t border-border bg-white py-3 sm:hidden"><div className="flex flex-col gap-1">{navigation.map((item) => <MobileMenuItem key={item.href} item={item} closeMenu={() => setIsMobileMenuOpen(false)} />)}</div></div>}
+        {isMobileMenuOpen && (
+          <div className="border-t border-border bg-white py-3 sm:hidden">
+            <div className="flex flex-col gap-1">{navigation.map((item) => <MobileMenuItem key={item.href} item={item} closeMenu={() => setIsMobileMenuOpen(false)} />)}</div>
+            <div className="mt-3 flex flex-col gap-3 border-t border-border px-3 pt-3">
+              <a href={quoteFormUrl} target="_blank" rel="noopener noreferrer" className={`${quoteButtonClassName} w-full`} onClick={() => setIsMobileMenuOpen(false)}>
+                {t("requestQuote")}
+              </a>
+              {!isOnMoroccoPage && (
+                <Link href={moroccoHref} className={`${moroccoButtonClassName} w-full`} onClick={() => setIsMobileMenuOpen(false)}>
+                  <span className="block">{t("growMoroccoLine1")}</span>
+                  <span className="block">{t("growMoroccoLine2")}</span>
+                </Link>
+              )}
+            </div>
+          </div>
+        )}
       </nav>
     </header>
   );

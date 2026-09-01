@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { ContentDocument, ContentSection } from "@/lib/content";
 import { MarkdownDocument } from "@/components/content/MarkdownDocument";
+import { FrostedCard } from "@/components/ui/FrostedCard";
 
 interface ServiceTimelinePageProps {
   service: ContentDocument;
@@ -15,31 +16,36 @@ function ServiceSection({ section, index }: ServiceSectionProps) {
   const isReversed = index % 2 === 1;
 
   return (
-    <article className="relative grid gap-8 pl-8 sm:pl-12 lg:grid-cols-2 lg:items-center lg:gap-16 lg:pl-0">
+    <article className="relative pl-8 sm:pl-12 lg:pl-0">
       <span aria-hidden="true" className="absolute left-0 top-2 size-4 rounded-full border-4 border-white bg-primary shadow-sm lg:left-1/2 lg:-translate-x-1/2" />
-      <div className={`order-2 overflow-hidden rounded-2xl border border-border bg-secondary p-4 shadow-sm sm:p-6 ${isReversed ? "lg:order-2" : "lg:order-1"}`}>
+      {/* Single unified card: image inset on one side, heading + text directly on the card background on the other. */}
+      <FrostedCard className="grid gap-6 lg:grid-cols-2 lg:items-center lg:gap-10">
         {section.image && (
-          <div className="relative aspect-4/3">
+          <div className={`relative order-2 aspect-4/3 overflow-hidden rounded-xl ${isReversed ? "lg:order-2" : "lg:order-1"}`}>
             <Image
               src={section.image}
               alt={section.title}
               fill
-              sizes="(min-width: 1024px) 520px, 100vw"
-              className="object-contain"
+              sizes="(min-width: 1024px) 480px, 100vw"
+              className="object-cover"
             />
           </div>
         )}
-      </div>
-      <div className={`order-1 max-w-prose ${isReversed ? "lg:order-1" : "lg:order-2"}`}>
-        <p className="text-sm font-semibold uppercase tracking-[0.14em] text-primary">0{index + 1}</p>
-        <h2 className="mt-2 text-2xl font-semibold text-foreground md:text-3xl">{section.title}</h2>
-        <div className="mt-5 text-lg leading-relaxed text-muted-foreground">
-          <MarkdownDocument body={section.body} />
+        <div className={`order-1 ${isReversed ? "lg:order-1" : "lg:order-2"} ${section.image ? "" : "lg:col-span-2"}`}>
+          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-white/70">0{index + 1}</p>
+          <h2 className="mt-2 text-2xl font-bold text-white md:text-3xl">{section.title}</h2>
+          <div className="mt-5">
+            <MarkdownDocument
+              body={section.body}
+              className="max-w-prose text-justify text-lg leading-relaxed text-white/90 hyphens-auto"
+            />
+          </div>
         </div>
-      </div>
+      </FrostedCard>
     </article>
   );
 }
+
 
 export function ServiceTimelinePage({ service }: ServiceTimelinePageProps) {
   const sections = service.sections ?? [];
@@ -83,7 +89,7 @@ export function ServiceTimelinePage({ service }: ServiceTimelinePageProps) {
       </section>
 
       <section className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 md:py-24 lg:px-8">
-        <div className="relative overflow-hidden rounded-[28px] border border-border bg-gradient-to-b from-white to-secondary p-4 shadow-[0_0_0_1px_rgba(75,166,37,0.08),0_18px_45px_rgba(15,23,42,0.04)] sm:p-6 lg:p-8">
+        <div className="relative overflow-hidden rounded-[28px] border border-border bg-linear-to-b from-white to-secondary p-4 shadow-[0_0_0_1px_rgba(75,166,37,0.08),0_18px_45px_rgba(15,23,42,0.04)] sm:p-6 lg:p-8">
           <div className="absolute inset-y-6 left-5 w-px bg-border lg:left-1/2" aria-hidden="true" />
           <div className="relative space-y-12 lg:space-y-16">
             {sections.map((section, index) => <ServiceSection key={section.title} section={section} index={index} />)}

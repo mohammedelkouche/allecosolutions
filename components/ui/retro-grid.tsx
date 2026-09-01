@@ -89,14 +89,15 @@ export function RetroGrid({
       }
 
       // Draw vertical lines converging to vanishing point (horizontal perspective)
-      const numVerticalLines = 40;
+      const numVerticalLines = 60;
       for (let i = 0; i < numVerticalLines; i++) {
         const x = (i / (numVerticalLines - 1)) * width;
         
         // Calculate line from bottom to vanishing point for proper horizontal perspective
         const bottomX = x;
         const bottomY = height;
-        const topX = vanishingPointX + (x - vanishingPointX) * 0.15; // Converge toward center
+        // const topX = vanishingPointX + (x - vanishingPointX) * 0.15; // Converge toward center
+        const topX = vanishingPointX + (x - vanishingPointX) * 0.5; // Converge toward center
         const topY = horizonY;
 
         // Fade vertical lines near edges

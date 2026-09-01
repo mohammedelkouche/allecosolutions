@@ -13,11 +13,12 @@ interface DiaTextRevealProps {
 
 export function DiaTextReveal({
   text,
-  colors = ["#4BA625", "#2E7D32"],
+  // colors = ["#4BA625", "#2E7D32"],
   className = "",
   duration = 1.5,
   delay = 0,
-  textColor = "var(--foreground)",
+  // textColor = "var(--foreground)",
+  textColor = "var(--primary)",
 }: DiaTextRevealProps) {
   const shouldReduceMotion = useReducedMotion();
 
