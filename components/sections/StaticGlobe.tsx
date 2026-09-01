@@ -53,7 +53,7 @@ const MAP_TOP = (0.5 - FOCUS_Y * (MAP_ZOOM / 100) * MAP_ASPECT) * 100;
 export function StaticGlobe({ markers = defaultCountryMarkers, className = "" }: StaticGlobeProps) {
   return (
     <div className={`relative mx-auto aspect-square w-full max-w-125 select-none ${className}`}>
-      <div className="absolute inset-0 overflow-hidden rounded-full bg-[radial-gradient(circle_at_32%_28%,#f4f8fc,#e2ecf6_60%,#cddceb_100%)] shadow-[0_25px_70px_rgba(15,23,42,0.15)] ring-1 ring-slate-200">
+      <div className="absolute inset-0 overflow-hidden rounded-full bg-[radial-gradient(circle_at_32%_28%,#f4f8fc,#e2ecf6_60%,#cddceb_100%)] shadow-[0_25px_70px_rgba(15,23,42,0.15)] ring-1 ring-border">
         {/* eslint-disable-next-line @next/next/no-img-element -- static decorative vector, not a Next/Image candidate */}
         <img
           src="/world-map.svg"
@@ -73,12 +73,12 @@ export function StaticGlobe({ markers = defaultCountryMarkers, className = "" }:
             y1={marker.anchor.y}
             x2={marker.position.x}
             y2={marker.position.y + 7}
-            stroke="#c28b2b"
+            stroke="#4BA625"
             strokeWidth="0.4"
           />
         ))}
         {markers.map((marker) => (
-          <circle key={`anchor-${marker.id}`} cx={marker.anchor.x} cy={marker.anchor.y} r="1.3" fill="#c28b2b" />
+          <circle key={`anchor-${marker.id}`} cx={marker.anchor.x} cy={marker.anchor.y} r="1.3" fill="#4BA625" />
         ))}
       </svg>
 
@@ -92,14 +92,14 @@ export function StaticGlobe({ markers = defaultCountryMarkers, className = "" }:
             transform: `translate(-50%, -50%) rotate(${marker.rotate}deg)`,
           }}
         >
-          <div className="h-16 w-16 overflow-hidden rounded-xl border border-slate-200 bg-white p-1 shadow-lg shadow-slate-900/20 md:h-20 md:w-20">
+          <div className="h-16 w-16 overflow-hidden rounded-xl border border-border bg-white p-1 shadow-lg shadow-foreground/20 md:h-20 md:w-20">
             <img
               src={marker.image}
               alt={marker.caption}
               className="h-full w-full rounded-lg object-cover"
             />
           </div>
-          <span className="mt-2 rounded-full border border-slate-200 bg-white px-2 py-1 text-[10px] font-medium uppercase tracking-[0.16em] text-slate-700">
+          <span className="mt-2 rounded-full border border-border bg-white px-2 py-1 text-[10px] font-medium uppercase tracking-[0.16em] text-muted-foreground">
             {marker.caption}
           </span>
         </div>

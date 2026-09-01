@@ -134,9 +134,9 @@ export function GlobePolaroids({
         diffuse: 1.2,
         mapSamples: 16000,
         mapBrightness: 6,
-        baseColor: [0.2, 0.15, 0.08],
-        markerColor: [0.76, 0.55, 0.17],
-        glowColor: [0.85, 0.65, 0.3],
+        baseColor: [0.06, 0.14, 0.05],
+        markerColor: [0.29, 0.65, 0.15],
+        glowColor: [0.35, 0.7, 0.28],
         markers: markers.map((marker) => ({ location: marker.location, size: 0.06 })),
         onRender: (state) => {
           if (!reducedMotionRef.current) {
@@ -176,14 +176,14 @@ export function GlobePolaroids({
           className="absolute flex flex-col items-center"
           style={{ left: "50%", top: "50%" }}
         >
-          <div className="h-18 w-18 overflow-hidden rounded-xl border border-slate-200 bg-white p-1 shadow-lg shadow-slate-900/10">
+          <div className="h-18 w-18 overflow-hidden rounded-xl border border-border bg-white p-1 shadow-lg shadow-foreground/10">
             <img
               src={marker.image}
               alt={marker.caption}
               className="h-full w-full rounded-lg object-cover"
             />
           </div>
-          <span className="mt-2 rounded-full border border-white/20 bg-white/75 px-2 py-1 text-[10px] font-medium uppercase tracking-[0.16em] text-slate-700 backdrop-blur-sm">
+          <span className="mt-2 rounded-full border border-white/20 bg-white/75 px-2 py-1 text-[10px] font-medium uppercase tracking-[0.16em] text-muted-foreground backdrop-blur-sm">
             {marker.caption}
           </span>
         </div>

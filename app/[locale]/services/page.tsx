@@ -20,13 +20,13 @@ export default async function ServicesPage({ params }: ServicesPageProps) {
 
   return (
     <main className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-      <h1 className="text-3xl font-semibold text-slate-950">{t("title")}</h1>
-      <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-600">{t("intro")}</p>
+      <h1 className="text-3xl font-semibold text-foreground">{t("title")}</h1>
+      <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">{t("intro")}</p>
       <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {services.map((service) => (
-          <article key={service.slug} className="rounded-md border border-slate-200 bg-white p-6 shadow-sm">
-            <h2 className="text-xl font-semibold text-slate-950">{service.title}</h2>
-            <Link href={`/services/${service.slug}`} className="mt-6 inline-flex rounded-md bg-amber-600 px-4 py-2 text-sm font-semibold text-white hover:bg-amber-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-600">
+          <article key={service.slug} className="rounded-md border border-border bg-white p-6 shadow-sm">
+            <h2 className="text-xl font-semibold text-foreground">{service.title}</h2>
+            <Link href={`/services/${service.slug}`} className="mt-6 inline-flex rounded-md bg-accent px-4 py-2 text-sm font-semibold text-white hover:bg-accent/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
               {t("readMore")}
             </Link>
           </article>

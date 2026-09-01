@@ -15,8 +15,8 @@ export default async function EnergyRenovationPage({ params }: PageProps) {
   const t = await getTranslations({ locale, namespace: "pages.renovation" });
   return (
     <main className="mx-auto w-full max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
-      <h1 className="text-4xl font-semibold text-slate-950">{t("title")}</h1>
-      <p className="mt-6 text-base leading-relaxed text-slate-600">{t("intro")}</p>
+      <h1 className="text-4xl font-semibold text-foreground">{t("title")}</h1>
+      <p className="mt-6 text-base leading-relaxed text-muted-foreground">{t("intro")}</p>
     </main>
   );
 }

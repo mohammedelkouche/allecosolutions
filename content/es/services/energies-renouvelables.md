@@ -3,8 +3,8 @@ title: "Energías renovables"
 metaTitle: "Energías renovables | Alleco Solutions"
 metaDescription: "Soluciones de energías renovables para edificios residenciales y terciarios: solar fotovoltaica, solar térmica para producción de ACS y bombeo solar. Estudios, dimensionamiento y acompañamiento técnico."
 icon: "sun"
-order: 3
-heroImage: "/Energies-renouvelables.png"
+order: 2
+heroImage: "/Energies-renouvelables.jpg"
 sections:
   - title: "Solar fotovoltaica"
     image: "/Solaire-photovoltaïque.png"

@@ -54,7 +54,7 @@ export function LanguageSwitcher() {
         aria-expanded={isOpen}
         aria-haspopup="menu"
         aria-label={t("label")}
-        className="inline-flex min-h-10 items-center gap-2 rounded-md px-3 py-2 text-slate-800 outline-none transition-colors hover:bg-slate-100"
+        className="inline-flex min-h-10 items-center gap-2 rounded-md px-3 py-2 text-foreground outline-none transition-colors hover:bg-secondary"
         onClick={() => setIsOpen((open) => !open)}
       >
         <svg aria-hidden="true" viewBox="0 0 24 24" className="size-5" fill="none" stroke="currentColor" strokeWidth="1.8">
@@ -66,14 +66,14 @@ export function LanguageSwitcher() {
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 top-full z-10 w-36 rounded-md border border-slate-200 bg-white py-1 shadow-lg" role="menu">
+        <div className="absolute right-0 top-full z-10 w-36 rounded-md border border-border bg-white py-1 shadow-lg" role="menu">
           {locales.map((nextLocale) => (
             <button
               key={nextLocale}
               type="button"
               role="menuitem"
               aria-current={nextLocale === locale ? "true" : undefined}
-              className="block w-full px-4 py-2 text-left text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-black focus:bg-slate-100 focus:outline-none"
+              className="block w-full px-4 py-2 text-left text-sm font-medium text-muted-foreground hover:bg-secondary hover:text-foreground focus:bg-secondary focus:outline-none"
               onClick={() => switchLanguage(nextLocale)}
             >
               {t(nextLocale)}

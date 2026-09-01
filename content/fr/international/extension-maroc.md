@@ -1,6 +1,6 @@
 ---
-title: "Extension au Maroc"
-metaTitle: "Extension au Maroc | Alleco Solutions"
+title: "Implantation & Développement au Maroc"
+metaTitle: "Implantation & Développement au Maroc | Alleco Solutions"
 metaDescription: "// TODO: meta description à valider avec le client"
 ---
 

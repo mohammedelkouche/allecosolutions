@@ -13,8 +13,8 @@ export async function AboutHero() {
         angle={0}
         cellSize={80}
         opacity={0.4}
-        lightLineColor="#c28b2b"
-        darkLineColor="#8b6914"
+        lightLineColor="#4BA625"
+        darkLineColor="#2E7D32"
       />
 
       {/* Content layer - z-10 keeps text above the grid */}
@@ -27,7 +27,7 @@ export async function AboutHero() {
           )}
           <DiaTextReveal
             text={t("slogan")}
-            colors={["#c28b2b", "#d9ae5d"]}
+            colors={["#4BA625", "#2E7D32"]}
             className="block text-4xl font-bold tracking-tight text-primary md:text-6xl"
           />
         </div>

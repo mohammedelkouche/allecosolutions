@@ -13,7 +13,7 @@ interface DiaTextRevealProps {
 
 export function DiaTextReveal({
   text,
-  colors = ["#c28b2b", "#d9ae5d"],
+  colors = ["#4BA625", "#2E7D32"],
   className = "",
   duration = 1.5,
   delay = 0,

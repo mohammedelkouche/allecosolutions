@@ -20,7 +20,7 @@ export default async function Home({ params }: HomePageProps) {
   const t = await getTranslations({ locale, namespace: "about" });
 
   return (
-    <main className="w-full bg-slate-100">
+    <main className="w-full bg-background">
       <AboutHero />
       
       {/* ALLECO SOLUTIONS with Globe */}

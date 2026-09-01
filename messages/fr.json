@@ -5,7 +5,7 @@
     "openMenu": "Ouvrir le menu",
     "closeMenu": "Fermer le menu",
     "about": "À propos",
-    "services": "NOS Services",
+    "services": "Nos Services",
     "international": "À l'international",
     "energyEfficiency": "Efficacité énergétique",
     "renewableEnergy": "Énergies renouvelables",
@@ -16,9 +16,9 @@
     "spain": "Espagne",
     "france": "France",
     "training": "Formations",
-    "moroccoExtension": "Extension au Maroc",
+    "moroccoExtension": "Implantation & Développement au Maroc",
     "contact": "Contactez-nous",
-    "NOS Services": "Nos services",
+    "Nos Services": "Nos Services",
     "Efficacité énergétique": "Efficacité énergétique",
     "Énergies renouvelables": "Énergies renouvelables",
     "CVC": "CVC",
@@ -29,7 +29,7 @@
     "Espagne": "Espagne",
     "France": "France",
     "Formations": "Formations",
-    "Extension au Maroc": "Extension au Maroc",
+    "Extension au Maroc": "Implantation & Développement au Maroc",
     "Contactez-nous": "Contactez-nous"
   },
 
@@ -41,7 +41,7 @@
     "metaDescription": "// TODO: meta description à valider avec le client",
     "hero": {
       "eyebrow": "",
-      "slogan": "L'ingénierie énergétique au service de bâtiments plus performants"
+      "slogan": "Votre partenaire technique et énergétique pour développer, optimiser et réussir vos projets, de l’ingénierie à la réalisation, en France, en Espagne et au Maroc."
     },
     "intro": {
       "companyName": "ALLECO SOLUTIONS",
@@ -55,7 +55,7 @@
   "footer": {
     "companyName": "Alleco Solutions",
     "companyDescription": "Audit énergétique, rénovation et conseil pour améliorer la performance et la durabilité de vos bâtiments.",
-    "servicesTitle": "Nos services",
+    "servicesTitle": "Nos Services",
     "internationalTitle": "À l'international",
     "contactTitle": "Contactez-nous",
     "rightsReserved": "Tous droits réservés."
@@ -71,7 +71,7 @@
   },
   "pages": {
     "services": {
-      "title": "Nos services | Alleco Solutions",
+      "title": "Nos Services | Alleco Solutions",
       "metaDescription": "// TODO: meta description à valider avec le client",
       "intro": "// TODO: introduction à valider avec le client",
       "readMore": "En savoir plus"

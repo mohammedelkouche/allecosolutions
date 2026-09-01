@@ -6,7 +6,7 @@ interface MarkdownDocumentProps {
 
 export function MarkdownDocument({ body }: MarkdownDocumentProps) {
   return (
-    <div className="prose prose-slate max-w-prose text-lg leading-relaxed text-slate-700">
+    <div className="prose max-w-prose text-lg leading-relaxed text-muted-foreground">
       <ReactMarkdown>{body}</ReactMarkdown>
     </div>
   );

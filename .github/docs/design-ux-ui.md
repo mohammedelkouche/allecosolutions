@@ -20,28 +20,29 @@
 /* app/globals.css */
 @import "tailwindcss";
 
+/*
+ * Brand palette derived from public/Logoalleco.png: green building icon
+ * (#4BA625), dark gray wordmark (#545454), white background.
+ * --primary and --accent are slightly deepened versions of the logo green so
+ * text/button combinations meet WCAG AA (4.5:1) on white; the true logo green
+ * (#4BA625) itself only clears AA for large text/non-text UI (3:1).
+ */
 :root {
-  --background: #F8F9FA;        /* blanc cassé, pas #ffffff pur */
-  --foreground: #0F172A;        /* gris très foncé, pas #000000 pur */
-  --primary: #0B3D2E;           /* vert profond désaturé - à valider avec le client */
-  --primary-foreground: #ffffff;
-  --secondary: #1E3A5F;         /* bleu profond désaturé */
-  --accent: #D97706;            /* ambre/orange contenu, réservé aux CTA */
-  --accent-foreground: #ffffff;
-  --muted: #E2E8F0;
-  --muted-foreground: #475569;
-  --border: #E2E8F0;
+  --background: #ffffff;      /* blanc pur, demande explicite du client */
+  --foreground: #545454;      /* gris du wordmark du logo, contraste 7.6:1 sur blanc */
+  --primary: #36781b;         /* vert du logo (#4BA625), assombri pour l'AA en texte/fond */
+  --secondary: #f2f2f2;       /* gris clair dérivé du gris du logo, fonds secondaires */
+  --accent: #2e7d32;          /* vert plus profond, réservé aux CTA — contraste 5.1:1 en blanc */
+  --muted-foreground: #6b6b6b;/* gris atténué pour texte secondaire, contraste 5.3:1 */
+  --border: #dadada;          /* gris clair pour bordures/dividers */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
   --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
   --font-sans: var(--font-geist-sans);
@@ -71,18 +72,23 @@ Secteur : audit énergétique / efficacité énergétique. Trois audiences très
 
 ## Palette de couleurs
 
-- **Primaire** : teinte sobre associée à l'énergie/technique (vert profond désaturé ou bleu
-  profond — voir exemple `@theme` ci-dessus). À valider avec le client s'il a déjà un logo/une
-  charte existante — ne pas figer définitivement sans vérifier.
-- **Secondaire** : une deuxième couleur sobre pour créer de la hiérarchie visuelle sans multiplier
-  les accents.
-- **Accent** : une seule couleur chaude et contenue, réservée aux CTA principaux (bouton "Demander
-  un audit", liens d'action) — doit ressortir sans jurer avec le sérieux du reste. Ne jamais
-  l'utiliser pour de la décoration pure.
-- **Neutres** : pas de noir pur ni de blanc pur (voir exemple ci-dessus) — plus confortable
-  visuellement et perçu comme plus qualitatif.
-- Contraste WCAG AA minimum systématique, en particulier vu le public (syndics, propriétaires,
-  parfois plus âgés) — vérifier `foreground` sur `background` et `accent-foreground` sur `accent`.
+Palette réelle, validée avec le client, construite à partir des 3 couleurs du logo
+(`public/Logoalleco.png`) : vert `#4BA625` (icône bâtiment), gris `#545454` (wordmark), blanc.
+
+- **Primaire** (`--primary`) : vert de marque, légèrement assombri (`#36781b`) pour rester lisible
+  en texte/fond sur blanc (AA 4.5:1) — utilisé pour les liens, icônes, indicateurs actifs,
+  soulignements de navigation.
+- **Secondaire** (`--secondary`) : gris clair dérivé du gris du logo, pour les fonds secondaires
+  (footer, panneaux) et la hiérarchie visuelle sans multiplier les accents.
+- **Accent** (`--accent`) : vert plus profond (`#2e7d32`), réservé exclusivement aux CTA principaux
+  (bouton "Demander un audit", liens d'action) — jamais utilisé pour de la décoration pure.
+- **Neutres** : `--foreground` reprend le gris exact du logo (`#545454`), pas de noir pur ni de
+  blanc pur ailleurs que `--background`.
+- Contraste WCAG AA vérifié : `foreground` sur `background` (7.6:1), `primary` sur `background`
+  (5.4:1), texte blanc sur `accent` (5.1:1) — tous au-dessus du seuil AA de 4.5:1 pour le texte
+  courant.
+- Éviter les dégradés verts génériques "eco-friendly" — le vert reste réservé aux éléments
+  interactifs/de marque (liens, CTA, icônes), pas une décoration de fond systématique.
 
 ## Typographie
 

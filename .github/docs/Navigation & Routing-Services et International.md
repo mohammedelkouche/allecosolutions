@@ -4,7 +4,7 @@
 
 ```
 À propos                    → /a-propos (statique)
-NOS Services                → /services (liste)
+Nos Services                → /services (liste)
   ├─ Efficacité énergétique → /services/efficacite-energetique
   ├─ Énergies renouvelables → /services/energies-renouvelables
   ├─ CVC                    → /services/cvc
@@ -15,7 +15,7 @@ NOS Services                → /services (liste)
   │    ├─ Espagne           → /international/renovation-energetique/espagne
   │    └─ France            → /international/renovation-energetique/france
   ├─ Formations             → /international/formations
-  └─ Extension au Maroc     → /international/extension-maroc
+  └─ Implantation & Développement au Maroc     → /international/Implantation & Développement au Maroc
 Contactez-nous               → /contact
 ```
 

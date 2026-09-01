@@ -16,8 +16,8 @@ export function RetroGrid({
   angle = 0,
   cellSize = 60,
   opacity = 0.5,
-  lightLineColor = "rgb(194, 139, 43)",
-  darkLineColor = "rgb(139, 90, 43)",
+  lightLineColor = "rgb(75, 166, 37)",
+  darkLineColor = "rgb(46, 125, 50)",
 }: RetroGridProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number | undefined>(undefined);
@@ -59,7 +59,8 @@ export function RetroGrid({
       const vanishingPointY = horizonY;
 
       // Draw horizontal lines with progressive spacing (perspective effect)
-      const numHorizontalLines = 25;
+      // const numHorizontalLines = 25;
+      const numHorizontalLines = 40;
       for (let i = 0; i < numHorizontalLines; i++) {
         // Progressive spacing - lines get closer together near horizon
         const progress = i / numHorizontalLines;
@@ -72,13 +73,15 @@ export function RetroGrid({
         const distanceFromHorizon = (y - horizonY) / (height - horizonY);
         const fadeAlpha = opacity * Math.min(1, distanceFromHorizon * 1.5);
 
+        // Canvas 2D gradients can't resolve CSS custom properties, so the brand green is inlined here (kept in sync with --primary).
         const gradient = ctx.createLinearGradient(0, y, width, y);
-        gradient.addColorStop(0, `rgba(194, 139, 43, ${fadeAlpha * 0.2})`);
-        gradient.addColorStop(0.5, `rgba(194, 139, 43, ${fadeAlpha})`);
-        gradient.addColorStop(1, `rgba(194, 139, 43, ${fadeAlpha * 0.2})`);
+        gradient.addColorStop(0, `rgba(75, 166, 37, ${fadeAlpha * 0.2})`);
+        gradient.addColorStop(0.5, `rgba(75, 166, 37, ${fadeAlpha})`);
+        gradient.addColorStop(1, `rgba(75, 166, 37, ${fadeAlpha * 0.2})`);
 
         ctx.strokeStyle = gradient;
-        ctx.lineWidth = 0.5;
+        // ctx.lineWidth = 1.5;
+        ctx.lineWidth = 2;
         ctx.beginPath();
         ctx.moveTo(0, y);
         ctx.lineTo(width, y);
@@ -100,13 +103,15 @@ export function RetroGrid({
         const distanceFromCenter = Math.abs(x - width / 2) / (width / 2);
         const fadeAlpha = opacity * (1 - distanceFromCenter * 0.6);
 
+        // Kept in sync with --accent (deeper green) for visual depth against the primary-green horizontal lines.
         const gradient = ctx.createLinearGradient(x, horizonY, x, height);
-        gradient.addColorStop(0, `rgba(139, 90, 43, ${fadeAlpha * 0.1})`);
-        gradient.addColorStop(0.5, `rgba(139, 90, 43, ${fadeAlpha})`);
-        gradient.addColorStop(1, `rgba(139, 90, 43, ${fadeAlpha * 0.1})`);
+        gradient.addColorStop(0, `rgba(46, 125, 50, ${fadeAlpha * 0.1})`);
+        gradient.addColorStop(0.5, `rgba(46, 125, 50, ${fadeAlpha})`);
+        gradient.addColorStop(1, `rgba(46, 125, 50, ${fadeAlpha * 0.1})`);
 
         ctx.strokeStyle = gradient;
-        ctx.lineWidth = 0.3;
+        // ctx.lineWidth = 1.2;
+        ctx.lineWidth = 2;
         ctx.beginPath();
         ctx.moveTo(topX, topY);
         ctx.lineTo(bottomX, bottomY);

@@ -16,7 +16,7 @@ interface NavigationItem {
 const navigation: NavigationItem[] = [
   { name: "À propos", href: "#a-propos" },
   {
-    name: "NOS Services",
+    name: "Nos Services",
     href: "#services",
     children: [
       { name: "Efficacité énergétique", href: "#efficacite-energetique" },
@@ -40,7 +40,7 @@ const navigation: NavigationItem[] = [
         ],
       },
       { name: "Formations", href: "#formations" },
-      { name: "Extension au Maroc", href: "#maroc" },
+      { name: "Implantation & Développement au Maroc", href: "#maroc" },
     ],
   },
   { name: "Contactez-nous", href: "#contact" },
