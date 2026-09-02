@@ -40,7 +40,14 @@ function DesktopMenuItem({ item, label }: DesktopMenuItemProps) {
 
   return (
     <DropdownMenu.Root open={isOpen} onOpenChange={setIsOpen}>
-      <DropdownMenu.Trigger className={triggerClassName} onPointerEnter={() => setIsOpen(true)}>
+      {/* Browser extensions (autofill) inject attributes like fdprocessedid into
+          form-related buttons before React hydrates, causing hydration mismatches.
+          suppressHydrationWarning tells React to ignore attribute diffs on this element. */}
+      <DropdownMenu.Trigger
+        className={triggerClassName}
+        onPointerEnter={() => setIsOpen(true)}
+        suppressHydrationWarning
+      >
         {label}
         <span aria-hidden="true" className="text-xs">▾</span>
         <span aria-hidden="true" className={`absolute inset-x-4 bottom-0 h-0.5 origin-left bg-primary transition-transform duration-200 ${isOpen ? "scale-x-100" : "scale-x-0"}`} />
@@ -125,7 +132,7 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-border bg-white text-foreground">
       <nav aria-label={t("label")} className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="relative flex h-20 items-center justify-between">
-          <button type="button" aria-expanded={isMobileMenuOpen} aria-controls="main-navigation" aria-label={isMobileMenuOpen ? t("closeMenu") : t("openMenu")} className="relative inline-flex items-center justify-center rounded-md p-2 text-foreground hover:bg-secondary hover:text-foreground focus-visible:outline-2 sm:hidden" onClick={() => setIsMobileMenuOpen((open) => !open)}>
+          <button type="button" suppressHydrationWarning aria-expanded={isMobileMenuOpen} aria-controls="main-navigation" aria-label={isMobileMenuOpen ? t("closeMenu") : t("openMenu")} className="relative inline-flex items-center justify-center rounded-md p-2 text-foreground hover:bg-secondary hover:text-foreground focus-visible:outline-2 sm:hidden" onClick={() => setIsMobileMenuOpen((open) => !open)}>
             {isMobileMenuOpen ? <X aria-hidden="true" className="size-6" /> : <Menu aria-hidden="true" className="size-6" />}
           </button>
           <Link href="/" className="flex shrink-0 items-center focus-visible:outline-2 focus-visible:outline-offset-4">

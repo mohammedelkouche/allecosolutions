@@ -65,7 +65,7 @@ export function MarkdownDocument({
           ol: ({ children }) => <ol className={`${ulClass} list-decimal`}>{children}</ol>,
           li: ({ children }) => <li className="leading-relaxed">{children}</li>,
           p: ({ node, children }) => {
-            if (isStandaloneLink(node)) {
+            if (node && isStandaloneLink(node)) {
               const anchor = node.children[0] as Element;
               return (
                 <p className="mt-8">

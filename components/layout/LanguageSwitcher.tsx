@@ -51,6 +51,7 @@ export function LanguageSwitcher() {
     >
       <button
         type="button"
+        suppressHydrationWarning
         aria-expanded={isOpen}
         aria-haspopup="menu"
         aria-label={t("label")}
