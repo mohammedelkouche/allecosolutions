@@ -100,5 +100,20 @@
       "intro": "// TODO: introduction à valider avec le client",
       "eyebrow": "Rénovation énergétique"
     }
+  },
+  "newsletter": {
+    "eyebrow": "Restez informé",
+    "title": "Newsletter",
+    "subtitle": "Recevez nos actualités, conseils en efficacité énergétique et nouveautés réglementaires.",
+    "mapEyebrow": "Nos zones d'intervention",
+    "mapTitle": "Où nous intervenons",
+    "openMap": "Ouvrir la carte dans un nouvel onglet",
+    "form": {
+      "emailLabel": "Votre adresse e-mail",
+      "emailPlaceholder": "vous@exemple.com",
+      "subscribeButton": "S'abonner",
+      "successMessage": "Merci ! Vous êtes bien inscrit à notre newsletter.",
+      "errorMessage": "Veuillez saisir une adresse e-mail valide."
+    }
   }
 }

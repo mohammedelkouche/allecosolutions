@@ -5,9 +5,9 @@ import { getTranslations } from "next-intl/server";
 import { navigation } from "@/lib/navigation";
 
 const contactInfo = [
-  { icon: Mail, text: "contact@allecosolutions.com", href: "mailto:contact@allecosolutions.com" },
-  { icon: Phone, text: "+212 000 000 000" },
-  { icon: MapPin, text: "Adresse à préciser", isAddress: true },
+  { icon: Mail, text: "Direction alleco@gmail.com", href: "mailto:Direction alleco@gmail.com" },
+  { icon: Phone, text: "05 22 22 43 72" },
+  { icon: MapPin, text: "Address: 159 Bd de la Résistance, Casablanca 20250", isAddress: true },
 ];
 
 export default async function Footer() {

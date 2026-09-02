@@ -100,5 +100,20 @@
       "intro": "// TODO: introducción a validar con el cliente",
       "eyebrow": "Rehabilitación energética"
     }
+  },
+  "newsletter": {
+    "eyebrow": "Mantente informado",
+    "title": "Newsletter",
+    "subtitle": "Recibe nuestras novedades, consejos de eficiencia energética y las últimas novedades normativas, sin spam.",
+    "mapEyebrow": "Nuestras zonas de intervención",
+    "mapTitle": "Dónde trabajamos",
+    "openMap": "Abrir el mapa en una nueva pestaña",
+    "form": {
+      "emailLabel": "Su dirección de correo electrónico",
+      "emailPlaceholder": "usted@ejemplo.com",
+      "subscribeButton": "Suscribirse",
+      "successMessage": "¡Gracias! Se ha suscrito correctamente a nuestra newsletter.",
+      "errorMessage": "Introduzca una dirección de correo electrónico válida."
+    }
   }
 }

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { AboutHero } from "@/components/sections/AboutHero";
-import { AboutSection } from "@/components/sections/AboutSection";
 import { AllecosAboutIntro } from "@/components/sections/AllecosAboutIntro";
+import { MapNewsletterSection } from "@/components/sections/MapNewsletterSection";
 import { PartnersSection } from "@/components/sections/PartnersSection";
 import { createLocalizedMetadata } from "@/lib/seo";
 
@@ -17,9 +17,6 @@ export async function generateMetadata({ params }: HomePageProps): Promise<Metad
 }
 
 export default async function Home({ params }: HomePageProps) {
-  const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "about" });
-
   return (
     <main className="w-full bg-background">
       <AboutHero />
@@ -30,10 +27,8 @@ export default async function Home({ params }: HomePageProps) {
       {/* Ils nous font confiance */}
       <PartnersSection />
 
-      {/* Additional About Section */}
-      <div className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
-        <AboutSection eyebrow={t("eyebrow")} title={t("title")} body={t("body")} />
-      </div>
+      {/* Carte + newsletter */}
+      <MapNewsletterSection />
     </main>
   );
 }
