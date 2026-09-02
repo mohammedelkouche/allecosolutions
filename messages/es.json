@@ -109,8 +109,9 @@
     "eyebrow": "Mantente informado",
     "title": "Newsletter",
     "subtitle": "Recibe nuestras novedades, consejos de eficiencia energética y las últimas novedades normativas, sin spam.",
-    "mapEyebrow": "Nuestras zonas de intervención",
-    "mapTitle": "Dónde trabajamos",
+    "mapEyebrow": "Nuestra oficina",
+    "mapTitle": "Nuestra oficina",
+    "mapSubtitle": "Encuentre nuestra oficina en pleno corazón de Casablanca, en Marruecos. Le recibimos en nuestro local para hablar de sus proyectos.",
     "openMap": "Abrir el mapa en una nueva pestaña",
     "form": {
       "emailLabel": "Su dirección de correo electrónico",

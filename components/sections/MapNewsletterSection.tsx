@@ -14,21 +14,16 @@ const ALLECO_LAT = "33.5845009";
 const ALLECO_LNG = "-7.607496";
 
 const MAP_EMBED_URL = `https://www.google.com/maps?q=${ALLECO_QUERY}&ll=${ALLECO_LAT},${ALLECO_LNG}&z=16&output=embed`;
-const MAP_DIRECT_URL = `https://www.google.com/maps/place/Alleco+Solutions/@${ALLECO_LAT},${ALLECO_LNG},16z`;
 
 export async function MapNewsletterSection() {
   const t = await getTranslations("newsletter");
-  const tGlobe = await getTranslations("international.globe");
 
   return (
     <section className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-stretch">
         {/* Colonne gauche : carte des zones d'intervention */}
         <FrostedCard className="flex flex-col">
-          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-white/70">
-            {t("mapEyebrow")}
-          </p>
-          <h2 className="mt-4 text-3xl font-bold text-white md:text-4xl">
+          <h2 className="text-3xl font-bold text-white md:text-4xl">
             {t("mapTitle")}
           </h2>
           <div className="mt-6 aspect-4/3 w-full overflow-hidden rounded-xl border border-white/10">
@@ -42,15 +37,7 @@ export async function MapNewsletterSection() {
             />
           </div>
           <p className="mt-4 text-sm leading-relaxed text-white/70">
-            {tGlobe("subtitle")}{" "}
-            <a
-              href={MAP_DIRECT_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-semibold text-white underline decoration-primary underline-offset-4 transition-colors hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
-            >
-              {t("openMap")}
-            </a>
+            {t("mapSubtitle")}
           </p>
         </FrostedCard>
 

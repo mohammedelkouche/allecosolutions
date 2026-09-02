@@ -5,7 +5,7 @@ import { getTranslations } from "next-intl/server";
 import { navigation } from "@/lib/navigation";
 
 const contactInfo = [
-  { icon: Mail, text: "Direction alleco@gmail.com", href: "mailto:Direction alleco@gmail.com" },
+  { icon: Mail, text: "Directionalleco@gmail.com", href: "mailto:Direction alleco@gmail.com" },
   { icon: Phone, text: "05 22 22 43 72" },
   { icon: MapPin, text: "Address: 159 Bd de la Résistance, Casablanca 20250", isAddress: true },
 ];
@@ -52,13 +52,31 @@ export default async function Footer() {
           <div>
             <p className="text-sm font-medium text-foreground">{tFooter("internationalTitle")}</p>
             <ul className="mt-4 space-y-3 text-sm">
-              {internationalMenu?.children?.map((item) => (
-                <li key={item.href}>
-                  <Link href={item.href} className="text-muted-foreground transition hover:text-foreground">
-                    {tNav(item.labelKey)}
-                  </Link>
-                </li>
-              ))}
+              {internationalMenu?.children?.map((item) =>
+                "children" in item && item.children.length ? (
+                  // Groups with sub-pages (e.g. "Rénovation énergétique" → Espagne/France)
+                  // are rendered as a non-clickable label with its sub-links indented,
+                  // so the footer never links to an empty parent page.
+                  <li key={item.href}>
+                    <p className="font-medium text-foreground">{tNav(item.labelKey)}</p>
+                    <ul className="mt-2 space-y-2 pl-4">
+                      {item.children.map((child) => (
+                        <li key={child.href}>
+                          <Link href={child.href} className="text-muted-foreground transition hover:text-foreground">
+                            {tNav(child.labelKey)}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </li>
+                ) : (
+                  <li key={item.href}>
+                    <Link href={item.href} className="text-muted-foreground transition hover:text-foreground">
+                      {tNav(item.labelKey)}
+                    </Link>
+                  </li>
+                ),
+              )}
             </ul>
           </div>
 

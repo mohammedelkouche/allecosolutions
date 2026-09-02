@@ -89,7 +89,7 @@ export function RetroGrid({
       }
 
       // Draw vertical lines converging to vanishing point (horizontal perspective)
-      const numVerticalLines = 60;
+      const numVerticalLines = 30;
       for (let i = 0; i < numVerticalLines; i++) {
         const x = (i / (numVerticalLines - 1)) * width;
         

@@ -19,9 +19,8 @@ export async function PartnersSection() {
   return (
     <section className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
       <FrostedCard className="text-center">
-        <p className="text-sm font-semibold uppercase tracking-[0.14em] text-white/70">{t("eyebrow")}</p>
-        <h2 className="mt-4 text-3xl font-bold text-white md:text-4xl">{t("title")}</h2>
-        <p className="mx-auto mt-4 max-w-2xl text-justify text-lg leading-relaxed text-white/90 hyphens-auto">{t("subtitle")}</p>
+        <h2 className="text-3xl font-bold text-white md:text-4xl">{t("title")}</h2>
+        <p className="mx-auto mt-4 max-w-2xl text-center text-lg leading-relaxed text-white/90 hyphens-auto">{t("subtitle")}</p>
 
         <div className="mt-10 grid grid-cols-2 items-center justify-items-center gap-8 sm:grid-cols-3 sm:gap-12">
           {partners.map((partner) => (

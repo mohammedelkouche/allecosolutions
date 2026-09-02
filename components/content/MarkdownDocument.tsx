@@ -32,6 +32,23 @@ function isStandaloneLink(paragraph: Element): boolean {
   return children.length === 1 && children[0].type === "element" && children[0].tagName === "a";
 }
 
+// Tagline: a paragraph written entirely in bold (e.g. "**Vous développez vos
+// projets.**") is a short slogan tied to a CTA — render it centered, while
+// regular article paragraphs keep their normal alignment. Hard line breaks
+// inside the tagline produce <br> elements, which are allowed between the
+// bold segments.
+function isFullyBoldParagraph(paragraph: Element): boolean {
+  const children = paragraph.children;
+  return (
+    children.length > 0 &&
+    children.every(
+      (child) =>
+        child.type === "element" &&
+        (child.tagName === "strong" || child.tagName === "br"),
+    )
+  );
+}
+
 function getLinkHref(anchor: Element): string {
   const href = anchor.properties?.href;
   return typeof href === "string" ? href : "#";
@@ -68,7 +85,7 @@ export function MarkdownDocument({
             if (node && isStandaloneLink(node)) {
               const anchor = node.children[0] as Element;
               return (
-                <p className="mt-8">
+                <p className="mt-8 text-center">
                   <a
                     href={getLinkHref(anchor)}
                     target="_blank"
@@ -80,6 +97,9 @@ export function MarkdownDocument({
                   </a>
                 </p>
               );
+            }
+            if (node && isFullyBoldParagraph(node)) {
+              return <p className="text-center font-semibold text-white">{children}</p>;
             }
             return <p>{children}</p>;
           },

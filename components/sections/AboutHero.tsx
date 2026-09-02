@@ -18,7 +18,7 @@ export async function AboutHero() {
       />
 
       {/* Content layer - z-10 keeps text above the grid */}
-      <div className="relative z-10 mx-auto flex min-h-[400px] max-w-6xl items-center px-4 py-12 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto flex min-h-[400px] max-w-6xl flex-col items-center justify-center px-4 py-12 text-center sm:px-6 lg:px-8">
         <div className="max-w-4xl">
           {t("eyebrow") && (
             <p className="mb-6 text-sm font-semibold uppercase tracking-[0.18em] text-primary">

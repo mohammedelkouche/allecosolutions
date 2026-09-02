@@ -5,22 +5,41 @@ import { useTranslations } from "next-intl";
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-// TODO: brancher l'envoi sur le formulaire Google Forms fourni par le client
-// (ou un endpoint dédié). Pour l'instant la validation est purement client,
-// puisqu'il n'y a pas de backend.
+// Google Apps Script Web App that appends the email to the newsletter Google
+// Sheet. Deployed with access "Anyone", so it can be called from the browser.
+const GOOGLE_SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfycbx-i_GvcezaKvkKA-LCcv5YRZfNYKGR9KbLonpK1zxMA9lvUT-Yihj2uMz-1XGZeI7d/exec";
+
 export function NewsletterForm() {
   const t = useTranslations("newsletter.form");
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "error" | "success">("idle");
+  const [status, setStatus] = useState<"idle" | "loading" | "error" | "success">("idle");
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (!emailPattern.test(email.trim())) {
+    const trimmedEmail = email.trim();
+    if (!emailPattern.test(trimmedEmail)) {
       setStatus("error");
       return;
     }
-    setStatus("success");
-    setEmail("");
+
+    setStatus("loading");
+    try {
+      // Apps Script doesn't answer CORS preflights, so send a simple request:
+      // Content-Type text/plain (no preflight) + mode "no-cors" (fire and trust
+      // the script to record the row). A network failure is the only detectable
+      // error; if the script answers, we treat it as success.
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify({ email: trimmedEmail }),
+      });
+      setStatus("success");
+      setEmail("");
+    } catch {
+      setStatus("error");
+    }
   }
 
   const inputClassName =
@@ -48,7 +67,7 @@ export function NewsletterForm() {
           value={email}
           onChange={(event) => {
             setEmail(event.target.value);
-            if (status !== "idle") setStatus("idle");
+            if (status !== "idle" && status !== "loading") setStatus("idle");
           }}
           aria-invalid={status === "error"}
           aria-describedby={
@@ -60,9 +79,10 @@ export function NewsletterForm() {
         <button
           type="submit"
           suppressHydrationWarning
-          className="inline-flex h-12 shrink-0 items-center justify-center rounded-md bg-accent px-5 text-sm font-semibold text-white transition-colors hover:bg-accent/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+          disabled={status === "loading"}
+          className="inline-flex h-12 shrink-0 items-center justify-center rounded-md bg-accent px-5 text-sm font-semibold text-white transition-colors hover:bg-accent/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent disabled:cursor-not-allowed disabled:opacity-60"
         >
-          {t("subscribeButton")}
+          {status === "loading" ? "..." : t("subscribeButton")}
         </button>
       </div>
 

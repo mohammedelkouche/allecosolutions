@@ -109,8 +109,9 @@
     "eyebrow": "Restez informé",
     "title": "Newsletter",
     "subtitle": "Recevez nos actualités, conseils en efficacité énergétique et nouveautés réglementaires.",
-    "mapEyebrow": "Nos zones d'intervention",
-    "mapTitle": "Où nous intervenons",
+    "mapEyebrow": "Notre bureau",
+    "mapTitle": "Notre bureau",
+    "mapSubtitle": "Retrouvez notre bureau au cœur de Casablanca, au Maroc. Nous vous accueillons sur place pour échanger autour de vos projets.",
     "openMap": "Ouvrir la carte dans un nouvel onglet",
     "form": {
       "emailLabel": "Votre adresse e-mail",

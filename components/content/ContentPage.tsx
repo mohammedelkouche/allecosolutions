@@ -16,7 +16,7 @@ export function ContentPage({ document, eyebrow }: ContentPageProps) {
         <div className="mt-10">
           <MarkdownDocument
             body={document.body}
-            className="max-w-prose text-justify text-lg leading-relaxed text-white/90 hyphens-auto"
+            className="mx-auto text-justify max-w-3xl text-lg leading-relaxed text-white/90 hyphens-auto"
           />
         </div>
       </FrostedCard>

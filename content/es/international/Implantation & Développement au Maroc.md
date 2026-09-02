@@ -4,8 +4,8 @@ metaTitle: "Implantación y Desarrollo en Marruecos | Alleco Solutions"
 metaDescription: "// TODO: meta description por validar con el cliente"
 ---
 
-Usted desarrolla sus proyectos.\
-Nosotros construimos su capacidad operativa en Marruecos.
+**Usted desarrolla sus proyectos.**\
+**Nosotros construimos su capacidad operativa en Marruecos.**
 
 [Rellenar el formulario](https://forms.gle/RNw5qTR5oSEaFqpaA)
 
@@ -96,3 +96,5 @@ Esta experiencia nos permite construir organizaciones que no se basan únicament
 Ya sea que desee crear una actividad, abrir una estructura local, constituir un equipo dedicado, externalizar parte de su producción o desarrollar progresivamente su presencia en Marruecos, construimos con usted una solución adaptada.
 
 Nuestra ambición es convertirnos en un socio operativo local capaz de acompañar su desarrollo a largo plazo.
+
+[Rellenar el formulario](https://forms.gle/RNw5qTR5oSEaFqpaA)

@@ -4,8 +4,8 @@ metaTitle: "Implantation & Développement au Maroc | Alleco Solutions"
 metaDescription: "// TODO: meta description à valider avec le client"
 ---
 
-Vous développez vos projets.\
-Nous construisons votre capacité opérationnelle au Maroc.
+**Vous développez vos projets.**\
+**Nous construisons votre capacité opérationnelle au Maroc.**
 
 [Remplir le formulaire](https://forms.gle/RNw5qTR5oSEaFqpaA)
 
@@ -96,3 +96,5 @@ Cette expertise nous permet de construire des organisations qui ne reposent pas 
 Que vous souhaitiez créer une activité, ouvrir une structure locale, constituer une équipe dédiée, externaliser une partie de votre production ou développer progressivement votre présence au Maroc, nous construisons avec vous une solution adaptée.
 
 Notre ambition est de devenir un partenaire opérationnel local capable d’accompagner votre développement dans la durée.
+
+[Remplir le formulaire](https://forms.gle/RNw5qTR5oSEaFqpaA)
