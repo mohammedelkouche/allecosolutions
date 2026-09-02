@@ -8,4 +8,4 @@ metaDescription: "// TODO: meta description por validar con el cliente"
 
 Ya sea una empresa, una oficina técnica, un profesional o un particular, no dude en contactarnos. Nuestro equipo le responderá en el menor plazo posible.
 
-[Contáctenos](https://forms.gle/mfqgbGAMSLEUj4tp7)
+[Contáctenos]({{NEXT_PUBLIC_CONTACT_FORM_URL}})

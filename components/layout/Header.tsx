@@ -14,7 +14,7 @@ const triggerClassName = "group relative inline-flex items-center gap-1 rounded-
 const itemClassName = "flex items-center justify-between px-4 py-2 text-sm font-medium text-muted-foreground outline-none transition-colors data-[highlighted]:bg-secondary data-[highlighted]:font-semibold data-[highlighted]:text-foreground";
 const quoteButtonClassName = "inline-flex min-h-11 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary/90 focus-visible:outline-2 focus-visible:outline-offset-2";
 const moroccoButtonClassName = "inline-flex min-h-11 flex-col items-center justify-center rounded-md border border-primary px-4 py-2 text-center text-xs font-semibold leading-tight text-primary transition-colors hover:bg-secondary focus-visible:outline-2 focus-visible:outline-offset-2";
-const quoteFormUrl = "https://forms.gle/sqMvtxDJeSpHZXS66";
+const quoteFormUrl = process.env.NEXT_PUBLIC_QUOTE_FORM_URL ?? "";
 
 // Reuse the existing nav href instead of hardcoding a new path.
 const moroccoHref = navigation

@@ -7,7 +7,7 @@ metaDescription: "// TODO: meta description à valider avec le client"
 **Vous développez vos projets.**\
 **Nous construisons votre capacité opérationnelle au Maroc.**
 
-[Remplir le formulaire](https://forms.gle/RNw5qTR5oSEaFqpaA)
+[Remplir le formulaire]({{NEXT_PUBLIC_MOROCCO_FORM_URL}})
 
 ## 1. Développez votre activité énergétique au Maroc avec un partenaire local spécialisé
 
@@ -97,4 +97,4 @@ Que vous souhaitiez créer une activité, ouvrir une structure locale, constitue
 
 Notre ambition est de devenir un partenaire opérationnel local capable d’accompagner votre développement dans la durée.
 
-[Remplir le formulaire](https://forms.gle/RNw5qTR5oSEaFqpaA)
+[Remplir le formulaire]({{NEXT_PUBLIC_MOROCCO_FORM_URL}})

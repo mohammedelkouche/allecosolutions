@@ -8,7 +8,7 @@ const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 // Google Apps Script Web App that appends the email to the newsletter Google
 // Sheet. Deployed with access "Anyone", so it can be called from the browser.
 const GOOGLE_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbx-i_GvcezaKvkKA-LCcv5YRZfNYKGR9KbLonpK1zxMA9lvUT-Yihj2uMz-1XGZeI7d/exec";
+  process.env.NEXT_PUBLIC_GOOGLE_SHEET_SCRIPT_URL ?? "";
 
 export function NewsletterForm() {
   const t = useTranslations("newsletter.form");

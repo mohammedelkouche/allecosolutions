@@ -7,7 +7,7 @@ metaDescription: "// TODO: meta description por validar con el cliente"
 **Usted desarrolla sus proyectos.**\
 **Nosotros construimos su capacidad operativa en Marruecos.**
 
-[Rellenar el formulario](https://forms.gle/RNw5qTR5oSEaFqpaA)
+[Rellenar el formulario]({{NEXT_PUBLIC_MOROCCO_FORM_URL}})
 
 ## 1. Desarrolle su actividad energética en Marruecos con un socio local especializado
 
@@ -97,4 +97,4 @@ Ya sea que desee crear una actividad, abrir una estructura local, constituir un 
 
 Nuestra ambición es convertirnos en un socio operativo local capaz de acompañar su desarrollo a largo plazo.
 
-[Rellenar el formulario](https://forms.gle/RNw5qTR5oSEaFqpaA)
+[Rellenar el formulario]({{NEXT_PUBLIC_MOROCCO_FORM_URL}})

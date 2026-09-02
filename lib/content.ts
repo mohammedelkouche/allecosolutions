@@ -35,8 +35,17 @@ function readDocument(relativePath: string): ContentDocument {
   return {
     ...(parsed.data as ContentFrontmatter),
     slug: path.basename(relativePath, ".md"),
-    body: parsed.content.trim(),
+    body: expandEnvPlaceholders(parsed.content.trim()),
   };
+}
+
+// Replaces {{ENV_VAR}} placeholders in rendered markdown body with the value of
+// the matching environment variable. Used to keep Google Form URLs out of the
+// committed content files (e.g. "[Remplir le formulaire]({{NEXT_PUBLIC_MOROCCO_FORM_URL}})").
+function expandEnvPlaceholders(input: string): string {
+  return input.replace(/\{\{([A-Z][A-Z0-9_]*)\}\}/g, (_match, key: string) => {
+    return process.env[key] ?? "";
+  });
 }
 
 export function getServices(locale: string): ContentDocument[] {

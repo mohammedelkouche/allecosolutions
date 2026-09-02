@@ -8,4 +8,4 @@ Vous avez une question, un projet ou souhaitez simplement échanger avec notre �
 
 Que vous soyez une entreprise, un bureau d’études, un professionnel ou un particulier, n’hésitez pas à nous contacter. Notre équipe vous répondra dans les meilleurs délais.
 
-[Nous contacter](https://forms.gle/mfqgbGAMSLEUj4tp7)
+[Nous contacter]({{NEXT_PUBLIC_CONTACT_FORM_URL}})
