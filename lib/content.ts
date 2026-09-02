@@ -62,3 +62,7 @@ export function getCountry(locale: string, country: string): ContentDocument {
 export function getInternationalPage(locale: string, slug: string): ContentDocument {
   return readDocument(path.join(locale, "international", `${slug}.md`));
 }
+
+export function getContactPage(locale: string): ContentDocument {
+  return readDocument(path.join(locale, "contact.md"));
+}
