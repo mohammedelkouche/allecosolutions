@@ -6,7 +6,7 @@ import { navigation } from "@/lib/navigation";
 
 const contactInfo = [
   { icon: Mail, text: "Directionalleco@gmail.com", href: "mailto:Direction alleco@gmail.com" },
-  { icon: Phone, text: "05 22 22 43 72" },
+  { icon: Phone, text: "0663093929" },
   { icon: MapPin, text: "Address: 159 Bd de la Résistance, Casablanca 20250", isAddress: true },
 ];
 
@@ -41,7 +41,7 @@ export default async function Footer() {
             <ul className="mt-4 space-y-3 text-sm">
               {servicesMenu?.children?.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href} className="text-muted-foreground transition hover:text-foreground">
+                  <Link href={item.href} className="text-muted-foreground transition hover:text-accent">
                     {tNav(item.labelKey)}
                   </Link>
                 </li>
@@ -62,7 +62,7 @@ export default async function Footer() {
                     <ul className="mt-2 space-y-2 pl-4">
                       {item.children.map((child) => (
                         <li key={child.href}>
-                          <Link href={child.href} className="text-muted-foreground transition hover:text-foreground">
+                          <Link href={child.href} className="text-muted-foreground transition hover:text-accent">
                             {tNav(child.labelKey)}
                           </Link>
                         </li>
@@ -71,7 +71,7 @@ export default async function Footer() {
                   </li>
                 ) : (
                   <li key={item.href}>
-                    <Link href={item.href} className="text-muted-foreground transition hover:text-foreground">
+                    <Link href={item.href} className="text-muted-foreground transition hover:text-accent">
                       {tNav(item.labelKey)}
                     </Link>
                   </li>
@@ -91,7 +91,7 @@ export default async function Footer() {
                   ) : href ? (
                     <a
                       href={href}
-                      className="inline-block text-muted-foreground transition-transform duration-200 hover:scale-110 hover:text-foreground"
+                      className="inline-block text-muted-foreground transition duration-200 hover:text-accent"
                     >
                       {text}
                     </a>

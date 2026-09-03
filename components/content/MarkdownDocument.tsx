@@ -92,9 +92,6 @@ export function MarkdownDocument({
                 </p>
               );
             }
-            // if (node && isFullyBoldParagraph(node)) {
-            //   return <p className="text-center font-semibold text-white">{children}</p>;
-            // }
             return <p >{children}</p>;
           },
         }}
