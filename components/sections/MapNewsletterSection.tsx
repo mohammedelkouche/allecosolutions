@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { NewsletterForm } from "@/components/sections/NewsletterForm";
 
@@ -45,6 +46,17 @@ export async function MapNewsletterSection() {
           {/* Colonne droite : inscription à la newsletter.
               This is the ONLY card that keeps the charcoal background. */}
           <div className="flex flex-col justify-center rounded-2xl bg-[#3d3f3f]/97 p-6 shadow-xl sm:p-8">
+            {/* Newsletter illustration — light envelope artwork that pops on
+                the charcoal card and gives the signup a friendly identity. */}
+            <Image
+              src="/Newsletter.png"
+              alt=""
+              aria-hidden="true"
+              width={320}
+              height={240}
+              priority
+              className="mx-auto mb-6 h-auto w-40 object-contain sm:w-48"
+            />
             <p className="text-sm font-semibold uppercase tracking-[0.14em] text-white/70">
               {t("eyebrow")}
             </p>
