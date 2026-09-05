@@ -7,7 +7,7 @@ order: 1
 heroImage: "/Études énergétiques.jpg"
 sections:
   - title: "Estudios energéticos"
-    image: "/Efficacité-énergétique.png"
+    image: "/Efficacité-énergétique.jpg"
     body: >-
       Realización de estudios para analizar el rendimiento energético de edificios e instalaciones, identificar los principales consumos y evaluar el potencial de ahorro energético. Los estudios pueden incluir balances térmicos, análisis de consumos, necesidades energéticas, dimensionamiento de equipos y simulación del rendimiento, de acuerdo con las normas, métodos de cálculo y pliegos de condiciones aplicables.
   - title: "Auditoría energética"

@@ -5,7 +5,7 @@
     "openMenu": "Ouvrir le menu",
     "closeMenu": "Fermer le menu",
     "about": "À propos",
-    "services": "Nos Services",
+    "services": "Nos services",
     "international": "À l'international",
     "energyEfficiency": "Efficacité énergétique",
     "renewableEnergy": "Énergies renouvelables",
@@ -21,7 +21,7 @@
     "requestQuote": "Demandez un devis",
     "growMoroccoLine1": "Développez votre",
     "growMoroccoLine2": "activité au Maroc",
-    "Nos Services": "Nos Services",
+    "Nos services": "Nos services",
     "Efficacité énergétique": "Efficacité énergétique",
     "Énergies renouvelables": "Énergies renouvelables",
     "CVC": "CVC",
@@ -64,7 +64,7 @@
   "footer": {
     "companyName": "Alleco Solutions",
     "companyDescription": "Audit énergétique, rénovation et conseil pour améliorer la performance et la durabilité de vos bâtiments.",
-    "servicesTitle": "Nos Services",
+    "servicesTitle": "Nos services",
     "internationalTitle": "À l'international",
     "contactTitle": "Contactez-nous",
     "rightsReserved": "Tous droits réservés."
@@ -86,7 +86,7 @@
   },
   "pages": {
     "services": {
-      "title": "Nos Services | Alleco Solutions",
+      "title": "Nos services | Alleco Solutions",
       "metaDescription": "// TODO: meta description à valider avec le client",
       "intro": "// TODO: introduction à valider avec le client",
       "readMore": "En savoir plus"

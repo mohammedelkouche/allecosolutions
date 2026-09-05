@@ -69,7 +69,6 @@ export function ServiceTimelinePage({ service }: ServiceTimelinePageProps) {
           bg-foreground + SVG decoration were removed. */}
       {/* Hero height: min-h gives the full-bleed background its height (the
           fill Image stretches to fill it); padding adds breathing room for the title. */}
-      {/* <section className="relative isolate min-h-[420px] overflow-hidden text-white md:min-h-[520px]"> */}
       <section className="relative isolate min-h-[320px] overflow-hidden text-white md:min-h-[420px]">
         {service.heroImage ? (
           <>

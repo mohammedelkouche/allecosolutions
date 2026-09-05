@@ -4,7 +4,7 @@
 
 ```
 À propos                    → /a-propos (statique)
-Nos Services                → /services (liste)
+Nos services                → /services (liste)
   ├─ Efficacité énergétique → /services/efficacite-energetique
   ├─ Énergies renouvelables → /services/energies-renouvelables
   ├─ CVC                    → /services/cvc

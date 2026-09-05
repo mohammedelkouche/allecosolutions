@@ -4,7 +4,7 @@ metaTitle: "Efficacité énergétique | Alleco Solutions"
 metaDescription: "// TODO: meta description à valider avec le client"
 icon: "chart-no-axes-combined"
 order: 1
-heroImage: "/Efficacité-énergétique.png"
+heroImage: "/Efficacité-énergétique.jpg"
 sections:
   - title: "Études énergétiques"
     image: "/Études énergétiques.jpg"
