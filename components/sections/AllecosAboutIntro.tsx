@@ -13,7 +13,8 @@ export async function AllecosAboutIntro() {
   ];
 
   return (
-    <section className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+    // <section className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 lg:px-8 bg-secondary">
+    <section className="mx-auto w-full  px-4 py-16 sm:px-6 lg:px-8 bg-secondary">
       {/* Grille à deux colonnes en desktop, une colonne en mobile */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         {/* Colonne gauche : titre et paragraphe de présentation */}
@@ -22,7 +23,7 @@ export async function AllecosAboutIntro() {
             {t("mission")}
           </h2>
 
-          <div className="space-y-4 text-lg text-white/90">
+          <div className="space-y-4 text-lg text-slate-200">
             <p className="text-justify leading-relaxed hyphens-auto">
               {t("description")}
             </p>

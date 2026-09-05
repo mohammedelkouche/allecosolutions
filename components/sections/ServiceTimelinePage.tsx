@@ -16,8 +16,18 @@ function ServiceSection({ section, index }: ServiceSectionProps) {
   const isReversed = index % 2 === 1;
 
   return (
-    <article className="relative pl-8 sm:pl-12 lg:pl-0">
-      <span aria-hidden="true" className="absolute left-0 top-2 size-4 rounded-full border-4 border-white bg-primary shadow-sm lg:left-1/2 lg:-translate-x-1/2" />
+    <article className="relative">
+      {/* Desktop-only timeline segment for THIS card: top dot → vertical line →
+          bottom dot, all vertically centered on the card's horizontal midpoint.
+          Hidden on mobile (no dot/line/layout impact). z-10 keeps them above the
+          opaque FrostedCard background. */}
+      {/* Top dot — sits on the top border (half above / half below), centered. */}
+      <span aria-hidden="true" className="absolute left-1/2 top-0 z-10 hidden size-3 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-white bg-primary shadow-sm lg:flex" />
+      {/* Vertical line — from just below the top dot to just above the bottom.
+          White and semi-bold (w-0.5) for clear visibility against the card. */}
+      <span aria-hidden="true" className="absolute left-1/2 top-4 bottom-4 z-10 hidden w-0.5 -translate-x-1/2 bg-white lg:block" />
+      {/* Bottom dot — sits on the bottom border, mirroring the top dot. */}
+      <span aria-hidden="true" className="absolute bottom-0 left-1/2 z-10 hidden size-3 -translate-x-1/2 translate-y-1/2 rounded-full border-2 border-white bg-primary shadow-sm lg:flex" />
       {/* Single unified card: image inset on one side, heading + text directly on the card background on the other. */}
       <FrostedCard className="grid gap-6 lg:grid-cols-2 lg:items-center lg:gap-10">
         {section.image && (
@@ -37,7 +47,7 @@ function ServiceSection({ section, index }: ServiceSectionProps) {
           <div className="mt-5">
             <MarkdownDocument
               body={section.body}
-              className="max-w-prose text-justify text-lg leading-relaxed text-white/90 hyphens-auto"
+              className="max-w-prose text-justify text-lg leading-relaxed text-slate-200 hyphens-auto"
             />
           </div>
         </div>
@@ -89,11 +99,8 @@ export function ServiceTimelinePage({ service }: ServiceTimelinePageProps) {
       </section>
 
       <section className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 md:py-24 lg:px-8">
-        <div className="relative overflow-hidden rounded-[28px] border border-border bg-linear-to-b from-white to-secondary p-4 shadow-[0_0_0_1px_rgba(75,166,37,0.08),0_18px_45px_rgba(15,23,42,0.04)] sm:p-6 lg:p-8">
-          <div className="absolute inset-y-6 left-5 w-px bg-border lg:left-1/2" aria-hidden="true" />
-          <div className="relative space-y-12 lg:space-y-16">
-            {sections.map((section, index) => <ServiceSection key={section.title} section={section} index={index} />)}
-          </div>
+        <div className="relative space-y-10 lg:space-y-14">
+          {sections.map((section, index) => <ServiceSection key={section.title} section={section} index={index} />)}
         </div>
       </section>
     </main>

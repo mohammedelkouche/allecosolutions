@@ -7,7 +7,7 @@ order: 1
 heroImage: "/Efficacité-énergétique.png"
 sections:
   - title: "Études énergétiques"
-    image: "/Études énergétiques.png"
+    image: "/Études énergétiques.jpg"
     body: >-
       Réalisation d’études permettant d’analyser la performance énergétique des bâtiments et des installations, d’identifier les postes de consommation et d’évaluer les potentiels d’économies d’énergie. Les études peuvent porter sur les bilans thermiques, l’analyse des consommations, les besoins énergétiques, le dimensionnement des équipements et la simulation des performances, conformément aux normes, méthodes de calcul et cahiers des charges applicables.
   - title: "Audit énergétique"
