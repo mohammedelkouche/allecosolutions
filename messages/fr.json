@@ -37,7 +37,8 @@
   },
 
   "contact": {
-    "eyebrow": "Contactez-nous"
+    "eyebrow": "Contactez-nous",
+    "cta": "Nous contacter →"
   },
 
   "about": {

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
-import { ContentPage } from "@/components/content/ContentPage";
+import { ContactHeroCard } from "@/components/sections/ContactHeroCard";
 import { getContactPage } from "@/lib/content";
 import { createLocalizedMetadata } from "@/lib/seo";
 
@@ -18,5 +18,15 @@ export default async function ContactPage({ params }: PageProps) {
     getContactPage(locale),
     getTranslations({ locale, namespace: "contact" }),
   ]);
-  return <ContentPage document={document} eyebrow={t("eyebrow")} />;
+  return (
+    <main className="flex min-h-[60vh] items-center justify-center px-4 py-16 sm:px-6 lg:px-8">
+      <ContactHeroCard
+        eyebrow={t("eyebrow")}
+        title={document.title}
+        body={document.body}
+        ctaLabel={t("cta")}
+        ctaHref={process.env.NEXT_PUBLIC_CONTACT_FORM_URL ?? "#"}
+      />
+    </main>
+  );
 }

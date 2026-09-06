@@ -48,6 +48,12 @@ export async function MapNewsletterSection() {
           <div className="flex flex-col justify-center rounded-2xl bg-[#3d3f3f]/97 p-6 shadow-xl sm:p-8">
             {/* Newsletter illustration — light envelope artwork that pops on
                 the charcoal card and gives the signup a friendly identity. */}
+            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-white/70">
+              {t("eyebrow")}
+            </p>
+            <h2 className="mt-4 text-3xl font-bold text-white md:text-4xl">
+              {t("title")}
+            </h2>
             <Image
               src="/Newsletter.png"
               alt=""
@@ -57,12 +63,6 @@ export async function MapNewsletterSection() {
               priority
               className="mx-auto mb-6 h-auto w-40 object-contain sm:w-48"
             />
-            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-white/70">
-              {t("eyebrow")}
-            </p>
-            <h2 className="mt-4 text-3xl font-bold text-white md:text-4xl">
-              {t("title")}
-            </h2>
             <p className="mt-4 max-w-md leading-relaxed text-slate-200">
               {t("subtitle")}
             </p>
