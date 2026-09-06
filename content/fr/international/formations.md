@@ -2,6 +2,7 @@
 title: "Formations"
 metaTitle: "Formations | Alleco Solutions"
 metaDescription: "// TODO: meta description à valider avec le client"
+heroImage: "/formation.jpg"
 ---
 
 Formations spécialisées en rénovation énergétique destinées aux professionnels intervenant sur les marchés espagnol et français. Les programmes sont adaptés aux réglementations, référentiels et pratiques propres à chaque marché, avec une approche orientée vers la maîtrise opérationnelle des études énergétiques.

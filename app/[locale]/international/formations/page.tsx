@@ -18,5 +18,5 @@ export default async function FormationsPage({ params }: PageProps) {
     getInternationalPage(locale, "formations"),
     getTranslations({ locale, namespace: "pages.international" }),
   ]);
-  return <ContentPage document={document} eyebrow={t("eyebrow")} />;
+  return <ContentPage document={document} eyebrow={t("eyebrow")} image={document.heroImage} />;
 }

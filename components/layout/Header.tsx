@@ -25,7 +25,6 @@ const moroccoHref =
     .find((item) => item.labelKey === "international")
     ?.children?.find((child) => child.labelKey === "moroccoExtension")?.href ??
   "/international/extension-maroc";
-
 // ─── useHoverMenu ─────────────────────────────────────────────────────────────
 //
 // A minimal hook that owns one boolean + one debounce timer.

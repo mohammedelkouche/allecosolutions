@@ -2,6 +2,7 @@
 title: "Formación"
 metaTitle: "Formación | Alleco Solutions"
 metaDescription: "// TODO: meta description por validar con el cliente"
+heroImage: "/formation.jpg"
 ---
 
 Formaciones especializadas en rehabilitación energética dirigidas a profesionales que intervienen en los mercados español y francés. Los programas se adaptan a las normativas, los referenciales y las prácticas propias de cada mercado, con un enfoque orientado al dominio operativo de los estudios energéticos.

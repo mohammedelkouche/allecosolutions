@@ -28,6 +28,7 @@ export function ContactHeroCard({
         <Image
           src="/contactez-nous.jpg"
           fill
+          sizes="(min-width: 1024px) 40vw, 100vw"
           className="object-cover object-center"
           alt=""
           aria-hidden="true"
@@ -42,6 +43,7 @@ export function ContactHeroCard({
           <Image
             src="/World_map.png"
             fill
+            sizes="112px"
             className="object-contain"
             alt=""
             aria-hidden="true"
