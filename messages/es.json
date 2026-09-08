@@ -18,6 +18,7 @@
     "training": "Formación",
     "moroccoExtension": "Implantación y Desarrollo en Marruecos",
     "contact": "Contáctenos",
+    "joinUs": "Trabaje con nosotros",
     "requestQuote": "Solicitar presupuesto",
     "growMoroccoLine1": "Desarrolle su actividad",
     "growMoroccoLine2": "en Marruecos",
@@ -104,6 +105,19 @@
       "metaDescription": "// TODO: meta description por validar con el cliente",
       "intro": "// TODO: introducción a validar con el cliente",
       "eyebrow": "Rehabilitación energética"
+    },
+    "joinUs": {
+      "title": "Trabaje con nosotros",
+      "metaTitle": "Trabaje con nosotros | Alleco Solutions",
+      "metaDescription": "// TODO: descripción meta por validar con el cliente",
+      "intro": "// TODO: texto de presentación por validar con el cliente",
+      "heroTitle": "Únase a nuestro equipo",
+      "heroSubtitle": "Explore las apasionantes oportunidades de empleo en nuestra oficina de estudios y envíe ahora mismo su CV en línea.",
+      "corporateText1": "En Allecosolution somos un equipo con múltiples competencias, culturas e idiomas, que ofrece experiencias excepcionales que moldean un futuro mejor.",
+      "corporateText2": "Valoramos la audacia, la creatividad, la excelencia, la humanidad y la solidaridad: los cimientos de nuestro éxito. Unirse a nosotros es crecer en un entorno dinámico y ágil donde el aprendizaje y el desarrollo prosperan.",
+      "corporateText3": "Con la innovación, seguimos superando los límites. ¡Construya el futuro con nosotros!",
+      "ctaText": "Por favor, envíe su candidatura espontánea rellenando el siguiente formulario con su CV",
+      "ctaButton": "Rellenar el formulario"
     }
   },
   "newsletter": {

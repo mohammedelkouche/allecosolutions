@@ -17,6 +17,12 @@ const quoteButtonClassName =
   "inline-flex min-h-11 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary/90 focus-visible:outline-2 focus-visible:outline-offset-2";
 const moroccoButtonClassName =
   "inline-flex min-h-11 flex-col items-center justify-center rounded-md border border-primary px-4 py-2 text-center text-xs font-semibold leading-tight text-primary transition-colors hover:bg-secondary focus-visible:outline-2 focus-visible:outline-offset-2";
+// "Rejoignez-nous" uses the exact same link layout and underline hover as the
+// other nav links, but its resting label uses the brand green (--primary)
+// from the palette, so it stands out as an accent between "Contactez-nous"
+// and the green quote CTA. Font weight increases on hover like the others.
+const joinUsLinkClassName =
+  "group relative inline-flex items-center gap-1 rounded-md px-4 py-2 text-sm font-medium text-primary transition-colors hover:font-semibold hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-2";
 
 const quoteFormUrl = process.env.NEXT_PUBLIC_QUOTE_FORM_URL ?? "";
 
@@ -123,10 +129,15 @@ function DesktopMenuItem({ item, label }: DesktopMenuItemProps) {
     return () => document.removeEventListener("mousedown", handler);
   }, [isOpen, close]);
 
-  // Simple leaf link — no panel needed
+  // Simple leaf link — no panel needed. "Rejoignez-nous" keeps the exact same
+  // link style as "Contactez-nous" (plain text + underline hover), only its
+  // resting text color is the glass-like translucent tint.
   if (!item.children?.length) {
     return (
-      <Link href={item.href} className={triggerClassName}>
+      <Link
+        href={item.href}
+        className={item.labelKey === "joinUs" ? joinUsLinkClassName : triggerClassName}
+      >
         {label}
         <span
           aria-hidden="true"
@@ -266,7 +277,11 @@ function MobileMenuItem({ item, closeMenu, depth = 0 }: MobileMenuItemProps) {
       } text-left font-medium text-muted-foreground hover:bg-secondary hover:font-semibold hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2`
     : `block rounded-md px-3 ${
         depth === 0 ? "py-3 text-base" : "py-2 text-sm"
-      } font-medium text-muted-foreground hover:bg-secondary hover:font-semibold hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2`;
+      } font-medium ${
+        // "Rejoignez-nous" keeps the brand-green accent on mobile too,
+        // matching its desktop link color (text-primary).
+        item.labelKey === "joinUs" ? "text-primary" : "text-muted-foreground"
+      } hover:bg-secondary hover:font-semibold hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2`;
 
   if (!item.children?.length) {
     return (

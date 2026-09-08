@@ -14,7 +14,7 @@ export async function AllecosAboutIntro() {
 
   return (
     // <section className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 lg:px-8 bg-secondary">
-    <section className="mx-auto w-full  px-4 py-16 sm:px-6 lg:px-8 bg-secondary">
+    <section className="mx-auto w-full  px-4 py-16 sm:px-6 lg:px-25 bg-secondary">
       {/* Grille à deux colonnes en desktop, une colonne en mobile */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         {/* Colonne gauche : titre et paragraphe de présentation */}

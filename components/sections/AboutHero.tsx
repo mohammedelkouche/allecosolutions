@@ -29,12 +29,14 @@ export async function AboutHero() {
           <DiaTextReveal
             text={t("sloganTier1")}
             // colors={["#4BA625", "#2E7D32"]}
-            className="block text-2xl font-bold  text-primary md:text-4xl"
+            className="block text-3xl font-bold  text-primary md:text-5xl"
           />
-          <p className="mt-4 text-lg font-bold text-primary md:text-3xl">
+          {/* <p className="mt-4 text-lg font-bold text-primary md:text-3xl"> */}
+          <p className="mt-4 text-2xl font-bold text-primary md:text-4xl">
             {t("sloganTier2")}
           </p>
-          <p className="mt-3 text-base font-bold text-primary md:text-2xl">
+          {/* <p className="mt-3 text-base font-bold text-primary md:text-2xl"> */}
+          <p className="mt-3 text-2xl font-bold text-primary md:text-4xl">
             {t("sloganTier3")}
           </p>
         </div>

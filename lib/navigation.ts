@@ -34,6 +34,7 @@ export const navigation = [
     ],
   },
   { labelKey: "contact", href: "/contact" },
+  { labelKey: "joinUs", href: "/rejoignez-nous" },
 ] as const satisfies readonly NavigationItem[];
 
 export const serviceSlugs = [

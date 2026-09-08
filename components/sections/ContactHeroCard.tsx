@@ -24,12 +24,15 @@ export function ContactHeroCard({
   return (
     <div className="mx-auto flex max-w-4xl flex-col overflow-hidden rounded-2xl shadow-xl lg:flex-row">
       {/* LEFT HALF — decorative photo (hand holding a headset). */}
+      {/* <div className="relative min-h-[220px] w-full lg:min-h-[420px] lg:w-2/5"> */}
       <div className="relative min-h-[220px] w-full lg:min-h-[420px] lg:w-2/5">
         <Image
           src="/contactez-nous.jpg"
           fill
           sizes="(min-width: 1024px) 40vw, 100vw"
-          className="object-cover object-center"
+          // sizes="(min-width: 1024px) 80vw, 100vw"
+          className="object-left"
+          // className="object-cover object-center"
           alt=""
           aria-hidden="true"
         />
@@ -62,12 +65,14 @@ export function ContactHeroCard({
           />
         </div>
 
-        {/* CTA — external Google Form, opened in a new tab. */}
+        {/* CTA — external Google Form, opened in a new tab. Same eye-catching
+            style as the "Remplir le Formulaire" button on the careers page:
+            brand gradient, glowing green shadow, slight lift on hover. */}
         <a
           href={ctaHref}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex w-fit items-center gap-2 rounded-full bg-primary px-7 py-4 text-sm font-semibold text-white transition-colors hover:bg-primary/90 focus-visible:outline-2 focus-visible:outline-offset-2"
+          className="mt-10 inline-flex min-h-12 w-fit items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#4BA625] to-[#6BC53F] px-10 text-base font-semibold text-white shadow-lg shadow-[#4BA625]/40 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[#4BA625]/50 hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4BA625] active:translate-y-0"
         >
           {ctaLabel}
         </a>
