@@ -112,11 +112,13 @@
       "metaDescription": "// TODO: meta description à valider avec le client",
       "intro": "// TODO: texte de présentation à valider avec le client",
       "heroTitle": "Rejoignez notre équipe",
-      "heroSubtitle": "Explorez des opportunités d'emploi passionnantes au sein de notre bureau d'études et soumettez dès maintenant votre CV en ligne !",
-      "corporateText1": "Chez Allecosolution, nous sommes une équipe aux multiples compétences, cultures et langues, offrant des expériences exceptionnelles qui façonnent un avenir meilleur.",
-      "corporateText2": "Nous valorisons l'audace, la créativité, l'excellence, la bienveillance et la solidarité — les fondations de notre succès. Nous rejoindre, c'est grandir dans un environnement dynamique et agile où l'apprentissage et le développement prospèrent.",
-      "corporateText3": "Avec l'innovation, nous continuons à repousser les limites. Façonnez l'avenir avec nous !",
-      "ctaText": "Merci de soumettre votre candidature spontanée en remplissant le formulaire ci-dessous avec votre CV",
+      "heroSubtitle": "Découvrez les opportunités de carrière au sein de notre bureau d’études et soumettez dès maintenant votre candidature en ligne en déposant votre CV.",
+      "corporateText1": "Construisons ensemble l’énergie de demain.",
+      "corporateText2": "Rejoignez une équipe passionnée, agile et engagée dans la conception de solutions énergétiques innovantes et durables.",
+      "corporateText3": "Chez nous, audace, créativité, excellence, bienveillance et solidarité sont au cœur de notre quotidien.",
+      "corporateText4": "Développez vos talents, relevez de nouveaux défis et participez à la transition énergétique.",
+      "corporateText5": "Façonnez l’avenir avec nous.",
+      "ctaText": "Merci de bien vouloir compléter votre candidature en remplissant le formulaire ci-dessous et en y joignant votre CV.",
       "ctaButton": "Remplir le Formulaire"
     }
   },

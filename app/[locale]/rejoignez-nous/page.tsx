@@ -42,11 +42,11 @@ export default async function JoinUsPage({ params }: PageProps) {
         {/* Dark overlay so the white title/subtitle stay legible over the photo */}
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-black/50"
+          className="absolute inset-0 bg-black/70"
         />
         <div className="relative z-10 mx-auto max-w-3xl px-4 py-20 text-center sm:px-6 lg:px-8">
-          {/* <h1 className="text-9xl font-bold text-white md:text-5xl">{t("heroTitle")}</h1> */}
-          <h1 className="text-6xl font-bold text-[#18ff00]">{t("heroTitle")}</h1>
+          {/* <h1 className="text-6xl font-bold text-[#18ff00]">{t("heroTitle")}</h1> */}
+          <h1 className="text-6xl font-bold text-primary">{t("heroTitle")}</h1>
           {/* <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/90"> */}
           <p className="mx-auto mt-6 max-w-2xl text-xl leading-relaxed text-white/90">
             {t("heroSubtitle")}
@@ -82,6 +82,8 @@ export default async function JoinUsPage({ params }: PageProps) {
                 <p>{t("corporateText1")}</p>
                 <p>{t("corporateText2")}</p>
                 <p>{t("corporateText3")}</p>
+                <p>{t("corporateText4")}</p>
+                <p>{t("corporateText5")}</p>
               </div>
             </div>
 

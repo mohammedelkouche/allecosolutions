@@ -112,11 +112,13 @@
       "metaDescription": "// TODO: descripción meta por validar con el cliente",
       "intro": "// TODO: texto de presentación por validar con el cliente",
       "heroTitle": "Únase a nuestro equipo",
-      "heroSubtitle": "Explore las apasionantes oportunidades de empleo en nuestra oficina de estudios y envíe ahora mismo su CV en línea.",
-      "corporateText1": "En Allecosolution somos un equipo con múltiples competencias, culturas e idiomas, que ofrece experiencias excepcionales que moldean un futuro mejor.",
-      "corporateText2": "Valoramos la audacia, la creatividad, la excelencia, la humanidad y la solidaridad: los cimientos de nuestro éxito. Unirse a nosotros es crecer en un entorno dinámico y ágil donde el aprendizaje y el desarrollo prosperan.",
-      "corporateText3": "Con la innovación, seguimos superando los límites. ¡Construya el futuro con nosotros!",
-      "ctaText": "Por favor, envíe su candidatura espontánea rellenando el siguiente formulario con su CV",
+      "heroSubtitle": "Descubra las oportunidades de carrera en nuestra oficina de estudios y envíe ahora mismo su candidatura en línea adjuntando su CV.",
+      "corporateText1": "Construyamos juntos la energía del mañana.",
+      "corporateText2": "Únase a un equipo apasionado, ágil y comprometido con el diseño de soluciones energéticas innovadoras y sostenibles.",
+      "corporateText3": "Entre nosotros, la audacia, la creatividad, la excelencia, la humanidad y la solidaridad están en el corazón de nuestro día a día.",
+      "corporateText4": "Desarrolle sus talentos, afronte nuevos retos y participe en la transición energética.",
+      "corporateText5": "Construya el futuro con nosotros.",
+      "ctaText": "Por favor, complete su candidatura rellenando el siguiente formulario y adjuntando su CV.",
       "ctaButton": "Rellenar el formulario"
     }
   },

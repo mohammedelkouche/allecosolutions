@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
 import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { navigation } from "@/lib/navigation";
 
 const contactInfo = [
@@ -16,6 +16,7 @@ export default async function Footer() {
 
   const servicesMenu = navigation.find((item) => item.labelKey === "services");
   const internationalMenu = navigation.find((item) => item.labelKey === "international");
+  const aboutHref = navigation.find((item) => item.labelKey === "about")?.href ?? "/a-propos";
 
   return (
     <footer className="mt-16 w-full border-t border-border bg-secondary">
@@ -31,7 +32,23 @@ export default async function Footer() {
                 className="h-10 w-auto object-contain"
               />
             </div>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
+            {/* "À propos" — mirrors the main nav entry (same href from
+                lib/navigation.ts), placed as a clickable label introducing the
+                company description below. */}
+            <Link
+              href={aboutHref}
+              className="mt-4 text-sm font-medium text-foreground transition-colors hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2"
+            >
+              {tNav("about")}
+            </Link>
+            <Link
+              href="/rejoignez-nous"
+              className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary transition-colors hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2"
+            >
+              {tNav("joinUs")}
+              {/* <ArrowRight className="size-4" aria-hidden="true" /> */}
+            </Link>
+            <p className="mt-2 max-w-xs text-sm leading-relaxed text-muted-foreground">
               {tFooter("companyDescription")}
             </p>
           </div>
