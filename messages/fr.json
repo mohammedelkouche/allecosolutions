@@ -1,5 +1,6 @@
 {
   "languageSwitcher": { "label": "Choisir la langue", "fr": "Français (FR)", "es": "Español (ES)" },
+  "loading": "Chargement...",
   "navigation": {
     "label": "Navigation principale",
     "openMenu": "Ouvrir le menu",
